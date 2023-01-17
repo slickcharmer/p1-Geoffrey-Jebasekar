@@ -1,0 +1,1 @@
+Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=Revature;Persist Security Info=False;User ID=Geff;Password=Password123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
