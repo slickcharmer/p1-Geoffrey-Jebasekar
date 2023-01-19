@@ -2,16 +2,30 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Trainer;
 
 namespace UI_Console
 {
     public class Login : IMenu    
     {
-        public Login() { }
-        public string emailid;
-        IRepo repo = new SqlRepo(); 
+        //public Login() 
+        //{
+        //    return login;
+        //}
+        public static string emailid;
+        static Trainer_Education education = new Trainer_Education();
+        //IRepo repo = new SqlRepo(); 
+        //Login login= new Login();
+        //int flag = 0;
+        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;" +
+            "Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
+        IRepo repo = new SqlRepo(conStr);
+        
+
+       
         public void Display()
         {
             Console.WriteLine("Login page");
@@ -25,7 +39,8 @@ namespace UI_Console
         public string UserChoice()
         {
             string userInput = Console.ReadLine();
-            switch(userInput)
+            
+            switch (userInput)
             {
                 case "0":
                     return "Signup";
@@ -42,7 +57,8 @@ namespace UI_Console
                     else if(a==1)
                     {
                         Console.WriteLine("--------Logged in successfully----------");
-                        return "Education";
+                        //flag = 1;
+                        return "UserDetails";
 
                     }
                     else
@@ -60,5 +76,11 @@ namespace UI_Console
             
             
         }
+        public static string PassEmail()
+        {
+            return emailid ;
+        }
+        //Education education = new Education(emailid);
+        //program prog = new program(emailid);
     }
 }

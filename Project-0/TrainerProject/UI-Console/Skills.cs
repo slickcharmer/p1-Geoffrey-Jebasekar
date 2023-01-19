@@ -11,12 +11,19 @@ namespace UI_Console
     {
         int i = 0, j = 0;
         static Trainer_Skills skills = new Trainer_Skills();
-        IRepo repo = new SqlRepo();
+        //static Login login = new Login();
+        //readonly string val = login.PassEmail();
+        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        IRepo repo = new SqlRepo(conStr);
+        //IRepo repo = new SqlRepo();
+        string val = Login.PassEmail();
         public void Display()
         {
+            Console.WriteLine("Hey ---------------------- " + val);
+            skills.emailid = val;
             Console.WriteLine("[3] Profeceincy in skill - " + skills.profeciencyInSkill);
             Console.WriteLine("[2] Skill name - " + skills.skill);
-            Console.WriteLine("Hey " + skills.emailid);
+            
             Console.WriteLine("[1] Save");
             Console.WriteLine("[0] Go Back");
         }
@@ -27,32 +34,29 @@ namespace UI_Console
             switch(userInput)
             {
                 case "0":
-                    return "Experience";
+                    return "AddDetails";
                 case "1":
-                    if (i + j  >= 2)
-                    {
+                   
                         try
                         {
-                            Console.WriteLine("Adding Trainer Experience");
+                            Console.WriteLine("Adding Trainer Skill");
+                        
 
                             repo.AddSk(skills);
                             //repo1.AddL(login);
-                            Console.WriteLine("Congratulations-------You have added all the details");
-                            Console.WriteLine("Redirecting you to Trainer Menu");
-                            return "Menu";
+                            Console.WriteLine("Skills added successfully");
+                            Console.WriteLine("Redirecting you to add details menu");
+                            return "AddDetails";
                         }
 
                         catch (Exception ex)
                         {
                             Console.WriteLine("Sorry-----Try Adding Again");
-                            return "Experience";
+                        Console.WriteLine(ex.Message);
+                            return "Skills";
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Sorry-----Try Adding Again");
-                        return "Experience";
-                    }
+                    
+                   
 
 
                 case "2":

@@ -16,11 +16,10 @@ namespace UI_Console
         static Trainer_Education education = new Trainer_Education();
         static Trainer_Companies experience = new Trainer_Companies();
         static Trainer_Skills skills = new Trainer_Skills();
-        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=Revature;" +
-            "Persist Security Info=False;User ID=Geff;Password=Password123;" +
-            "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;" +
+            "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
         IRepo repo = new SqlRepo(conStr);
-        IRepo repo1 = new SqlRepo();
+        //IRepo repo1 = new SqlRepo();
 
         
         public void Display()
@@ -47,27 +46,27 @@ namespace UI_Console
                     return "Menu";
 
                 case "1":
-                    repo.Add(signup);
-                    repo.AddL(login);
-                    return "Login";
-                    //if (i>=1 && j>=1 && k>=1 && l>=1 && m>=1 && n>=1 && o>=1)
-                    //{
-                    //   // try
-                    //    //{
-                    //        Console.WriteLine("Adding Trainer");
+                    //repo.Add(signup);
+                    //repo.AddL(login);
+                    //return "Login";
+                    
+                        try
+                        {
+                           Console.WriteLine("Adding Trainer");
 
-                    //        repo.Add(signup);
-                    //        repo1.AddL(login);
-                    //        Console.WriteLine("Successfully added Trainer-------Login to fill further details");
-                    //        return "Login";
-                    //    //}
+                          repo.Add(signup);
+                          repo.AddL(login);
+                           Console.WriteLine("Successfully added Trainer-------Login to fill further details");
+                          return "Login";
+                        }
 
-                    //    //catch (Exception ex)
-                    //    //{
-                    //      //  Console.WriteLine("Sorry-----Try Adding Again");
-                    //        //return "Signup";
-                    //    //}
-                    //}
+                       catch(Exception ex)
+                        {
+                         Console.WriteLine("Sorry-----Try Adding Again");
+                        Console.WriteLine(ex.Message);
+                            return "Signup";
+                        }
+                    
                     //else
                     //{
                     //    Console.WriteLine("Sorry-----Try Adding Again");
@@ -76,45 +75,90 @@ namespace UI_Console
                     //return "Menu";
 
                 case "2":
-                    i++;
+                    //i++;
                     Console.WriteLine("Enter your First name");
-                    signup.firstname = Console.ReadLine();
+                    string a= Console.ReadLine();
+                    if(a!=null)
+                    {
+                        signup.firstname = a;
+
+                    }
+                     
                     return "Signup";
                 case "3":
-                    j++;
+                    //j++;
                     Console.WriteLine("Enter your Last name");
-                    signup.lastname = Console.ReadLine();
+                    string b = Console.ReadLine();
+                    if (b != null)
+                    {
+                        signup.lastname = b;
+
+                    }
                     return "Signup";
                 case "4":
                     k++;
                     Console.WriteLine("Enter your Email id");
-                   signup.emailId = Console.ReadLine();
-                    login.emailId = signup.emailId;
-                    education.emailid = signup.emailId;
-                    experience.emailid= signup.emailId;
-                    skills.emailid= signup.emailId;
+                    string c = Console.ReadLine();
+                    if (c != null)
+                    {
+                        signup.emailId = c;
+                        login.emailId = signup.emailId;
+                        //education.emailid = signup.emailId;
+                        //experience.emailid = signup.emailId;
+                        //skills.emailid = signup.emailId;
+
+                    }
+                    //signup.emailId = Console.ReadLine();
+                   
 
                     return "Signup";
                 case "5":
-                    l++;
+                   
                     Console.WriteLine("Enter your Password");
-                    signup.password = Console.ReadLine();
-                    login.password = signup.password;
+                    string d = Console.ReadLine();
+                    if (d != null)
+                    {
+                        signup.password = d;
+                        login.password = signup.password;
+
+                    }
+                    //signup.password = Console.ReadLine();
+                    
                     return "Signup";
                 case "6":
-                    m++;
+                    
                     Console.WriteLine("Enter your Phone number");
-                    signup.phoneno = Console.ReadLine();
+                    string e = Console.ReadLine();
+                    if (e != null)
+                    {
+                        signup.phoneno = e;
+                        
+
+                    }
+                    //signup.phoneno = Console.ReadLine();
                     return "Signup";
                 case "7":
-                    n++;
+                    
                     Console.WriteLine("Enter your Age");
-                    signup.age = Convert.ToByte(Console.ReadLine());
+                    int f = Convert.ToInt32(Console.ReadLine());
+                    if (f != null)
+                    {
+                        signup.age = f;
+                        //login.password = signup.password;
+
+                    }
+                    //signup.age = Convert.ToByte(Console.ReadLine());
                     return "Signup";
                 case "8":
-                    o++;
                     Console.WriteLine("Enter your City");
-                    signup.city = Console.ReadLine();
+                    string g = Console.ReadLine();
+                    if (g != null)
+                    {
+                        signup.city = g;
+                        //login.password = signup.password;
+
+                    }
+                    //signup.city = Console.ReadLine();
                     return "Signup";
 
                 default:

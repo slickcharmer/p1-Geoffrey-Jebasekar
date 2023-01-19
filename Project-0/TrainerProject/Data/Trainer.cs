@@ -69,6 +69,7 @@ namespace Data
                
             
         }
+        
 
 
     }
@@ -105,24 +106,7 @@ namespace Data
         //Regex rx = new Regex(@"[1-5]");
         public int profeciencyInSkill
         {
-            get
-            {
-                return profeciencyInSkill;
-
-            }
-            set
-            {
-                if (profeciencyInSkill >= 1 && profeciencyInSkill <= 5)
-                {
-                    profeciencyInSkill = value;
-                }
-                else
-                {
-                    throw new InvalidDataException("Profeciency should only contain value between 1 to 5");
-                }
-
-
-            }
+            get;set;
         }
     }
     

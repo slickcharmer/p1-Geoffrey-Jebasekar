@@ -13,7 +13,7 @@ namespace UI_Console
             Console.WriteLine("Trainer Menu");
             // Console.WriteLine("[3] Password - " + trl.password);
             Console.WriteLine("[3] Get all trainer details");
-            Console.WriteLine("[2] Trainer Logim");
+            Console.WriteLine("[2] Trainer Login");
             Console.WriteLine("[1] Trainer Signup");
             Console.WriteLine("[0] Exit");
         }

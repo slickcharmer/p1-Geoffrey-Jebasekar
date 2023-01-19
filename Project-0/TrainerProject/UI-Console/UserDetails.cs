@@ -10,6 +10,8 @@ namespace UI_Console
     {
         public UserDetails() { }
         bool repeat = true;
+        
+        
 
         IMenu menu;
         public void Display()
@@ -26,7 +28,7 @@ namespace UI_Console
         public string UserChoice()
         {
 
-            string userInput = Console.ReadLine();
+        string userInput = Console.ReadLine();
 
         switch (userInput)
         {
@@ -34,7 +36,7 @@ namespace UI_Console
                     return "Menu";
 
                 case "1":
-                    return "Education";
+                    return "AddDetails";
                 case "2":
                     return "EditDetails";
                 case "3":

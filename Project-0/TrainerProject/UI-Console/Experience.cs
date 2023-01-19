@@ -11,10 +11,17 @@ namespace UI_Console
     {
         int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, o = 0;
         static Trainer_Companies experience = new Trainer_Companies();
-        IRepo repo = new SqlRepo();
+        //static Login login = new Login();
+        //string val = login.PassEmail();
+        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        IRepo repo = new SqlRepo(conStr);
+        //IRepo repo = new SqlRepo();
+        string val = Login.PassEmail();
         public void Display()
         {
             Console.WriteLine("Trainer's Experience Details");
+            Console.WriteLine("Hey ------------------- " + val);
+            experience.emailid = val;
             //Console.WriteLine("[9] City - " + trs.city);
             Console.WriteLine("[8] End Year - " + experience.endYear);
             Console.WriteLine("[7] Start Year - " + experience.startYear);
@@ -23,7 +30,7 @@ namespace UI_Console
             Console.WriteLine("[4] Industry - " + experience.industry);
             Console.WriteLine("[3] Title - " + experience.title);
             Console.WriteLine("[2] Company name - " + experience.companyName);
-            Console.WriteLine("Hey " + experience.emailid);
+            
             Console.WriteLine("[1] Save");
             Console.WriteLine("[0] Go Back");
         }
@@ -34,31 +41,29 @@ namespace UI_Console
             switch (userInput)
             {
                 case "0":
-                    return "Education";
+                    return "AddDetails";
                 case "1":
-                    if (i>=1 && j>=1 && k>=1 && l>=1 && m>=1 && n>=1 && o>=1)
-                    {
+                   
+                    
                         try
                         {
                             Console.WriteLine("Adding Trainer Experience");
+                        
 
                             repo.AddC(experience);
                             //repo1.AddL(login);
                             Console.WriteLine("Successfully added Trainer-------Login to fill further details");
-                            return "Skills";
+                            return "AddDetails";
                         }
 
                         catch (Exception ex)
                         {
                             Console.WriteLine("Sorry-----Try Adding Again");
+                        Console.WriteLine(ex.Message);
                             return "Experience";
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Sorry-----Try Adding Again");
-                        return "Experience";
-                    }
+                    
+                   
 
                 case "2":
                     i++;
@@ -88,12 +93,12 @@ namespace UI_Console
                 case "7":
                     n++;
                     Console.WriteLine("Enter your Start Year");
-                    experience.location = Console.ReadLine();
+                    experience.startYear = Console.ReadLine();
                     return "Experience";
                 case "8":
                     o++;
-                    Console.WriteLine("Enter your Location");
-                    experience.location = Console.ReadLine();
+                    Console.WriteLine("Enter your End Year");
+                    experience.endYear = Console.ReadLine();
                     return "Experience";
                 default:
                     Console.WriteLine("Enter a valid response");
