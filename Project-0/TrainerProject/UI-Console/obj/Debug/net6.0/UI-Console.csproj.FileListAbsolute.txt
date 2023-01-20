@@ -22,3 +22,11 @@ C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProjec
 C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProject\UI-Console\obj\Debug\net6.0\UI-Console.pdb
 C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProject\UI-Console\obj\Debug\net6.0\UI-Console.genruntimeconfig.cache
 C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProject\UI-Console\obj\Debug\net6.0\ref\UI-Console.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProject\UI-Console\bin\Debug\net6.0\Serilog.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProject\UI-Console\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProject\UI-Console\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProject\UI-Console\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProject\UI-Console\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProject\UI-Console\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProject\UI-Console\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Project-0\TrainerProject\UI-Console\bin\Debug\net6.0\Serilog.Settings.Configuration.dll

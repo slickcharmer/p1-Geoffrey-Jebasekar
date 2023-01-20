@@ -1,18 +1,28 @@
 {
   "version": 2,
-  "dgSpecHash": "s+u687ij4NN8GbZ5A6bgkqpp8TPTsPXDrpnyEJS5L0sXwSqbbFEKJ6wcl8l8hSftS2xczJXrhwZRL8a2BEnIAg==",
+  "dgSpecHash": "OG57aJc/SmrQqPKSghYxN6VB30Q9ELluYOQ3vHlqZ4ZT83y2H0Kpl4RLuMy6ik06Q3l/mPki5WG2i2ep2qtGSQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-0\\TrainerProject\\Data\\Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\microsoft.extensions.configuration\\2.0.0\\microsoft.extensions.configuration.2.0.0.nupkg.sha512",
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.0.0\\microsoft.extensions.configuration.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\microsoft.extensions.configuration.binder\\2.0.0\\microsoft.extensions.configuration.binder.2.0.0.nupkg.sha512",
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\microsoft.extensions.dependencymodel\\3.0.0\\microsoft.extensions.dependencymodel.3.0.0.nupkg.sha512",
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\microsoft.extensions.primitives\\2.0.0\\microsoft.extensions.primitives.2.0.0.nupkg.sha512",
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\serilog\\2.12.1-dev-01635\\serilog.2.12.1-dev-01635.nupkg.sha512",
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\serilog.settings.configuration\\3.5.0-dev-00370\\serilog.settings.configuration.3.5.0-dev-00370.nupkg.sha512",
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\serilog.sinks.file\\5.0.1-dev-00947\\serilog.sinks.file.5.0.1-dev-00947.nupkg.sha512",
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512",
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\system.text.json\\4.6.0\\system.text.json.4.6.0.nupkg.sha512"
   ],
   "logs": []
 }

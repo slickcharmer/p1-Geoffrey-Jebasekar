@@ -43,7 +43,7 @@ namespace UI_Console
             switch (userInput)
             {
                 case "0":
-                    return "Signup";
+                    return "Menu";
                 case "1":
                     Console.WriteLine("Enter your Email id");
                     emailid = Console.ReadLine();

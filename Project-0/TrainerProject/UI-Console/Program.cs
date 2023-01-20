@@ -1,9 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
+global using Serilog;
 using UI_Console;
 using Data;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Security.Cryptography.X509Certificates;
+
 
 namespace Trainer
 {
@@ -13,6 +15,10 @@ namespace Trainer
             "Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
         static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                             .WriteTo.File(@"..\..\..\Logs\logs.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
+                             .CreateLogger();
+            Log.Logger.Information("--------------------Program is started------------------");
             List<Trainer_Signup> GetDetails = new List<Trainer_Signup>();
             
             SqlRepo repo = new SqlRepo(conStr);
@@ -21,9 +27,9 @@ namespace Trainer
             EditDetails det = new EditDetails();
             DeleteDetails del = new DeleteDetails();
             IRepo repo1;
-            //Login login = new Login();
-            //int flag = 0;
+            
             IMenu menu = new Menu();
+            IMenu menu1 = new EditDetails();
             
             //string email = login.PassEmail();
             
@@ -41,6 +47,7 @@ namespace Trainer
                         repeat = false;
                         break;
                     case "GetAllTrainers":
+                        Log.Logger.Information("Get all trainers has been accessed");
                         var trainerdet = repo.GetAllTrainers();
                         foreach(var trainer in trainerdet) 
                         {
@@ -52,11 +59,13 @@ namespace Trainer
                         
                         
                     case "Signup":
+                        Log.Logger.Information("A new trainer entered");
                         menu = new Signup();
                         break;
                     case "Login":
                         //repeat = false;
                         //flag = 1;
+                        Log.Logger.Information("A trainer logged in");
                         menu = new Login();
                         break;
                     case "UserDetails":
@@ -64,15 +73,17 @@ namespace Trainer
                             
                         break;
                     case "AddDetails":
+                        Log.Logger.Information("A trainer wanted to add their details");
                         menu = new AddDetails();
                         break;
                     case "EditDetails":
+                        Log.Logger.Information("A trainer wanted to edit their details ");
                         bool rep = true;
-                        //menu = new EditDetails();
+                        menu = new EditDetails();
                         //menu.Display();
                         while(rep)
                         {
-                            menu = new EditDetails();
+                            //menu = new EditDetails();
                             menu.Display();
                             string choice = menu.UserChoice();
                             switch (choice) 
@@ -100,16 +111,17 @@ namespace Trainer
                                     menu = new EditEducation(edu);
                                     menu.Display();
                                     string a = menu.UserChoice();
-                                    //switch(a)
-                                    //{
-                                    //    case "EditDetails":
-                                    //        break;
-                                    //    case "EditEducation":
-                                    //        menu = new EditEducation();
-                                    //        break;
+                                    switch (a)
+                                    {
+                                        case "editdetails":
+                                            menu1 = new EditDetails();
+                                            break;
+                                        case "editeducation":
+                                            //menu = new editeducation();
+                                            break;
 
 
-                                    //}
+                                    }
 
                                     break;
 
@@ -156,6 +168,7 @@ namespace Trainer
                         }
                         break;
                     case "DeleteDetails":
+                        Log.Logger.Information("A trainer wanted to delete their details or their account");
                         bool repe = true;
                         //menu = new EditDetails();
                         //menu.Display();
@@ -260,6 +273,7 @@ namespace Trainer
                 }
                 
             }
+            Log.Logger.Information("----------------Program ends----------------------");
             /*IDetails details = new Login();
             if (flag==1)
             {

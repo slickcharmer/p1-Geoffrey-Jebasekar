@@ -52,7 +52,7 @@ namespace UI_Console
 
                             repo.AddC(experience);
                             //repo1.AddL(login);
-                            Console.WriteLine("Successfully added Trainer-------Login to fill further details");
+                            Console.WriteLine("Successfully added Trainer-------Redirecting you to Add Details page");
                             return "AddDetails";
                         }
 
