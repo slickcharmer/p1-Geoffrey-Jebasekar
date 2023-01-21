@@ -1,0 +1,8 @@
+2023-01-22 00:09:26.921 +05:30 [INF] --------------------Program is started------------------
+2023-01-22 00:09:29.812 +05:30 [INF] A new trainer entered
+2023-01-22 00:09:35.592 +05:30 [INF] A trainer logged in
+2023-01-22 00:09:53.468 +05:30 [INF] A trainer wanted to edit their details 
+2023-01-22 00:10:49.688 +05:30 [INF] --------------------Program is started------------------
+2023-01-22 00:10:51.433 +05:30 [INF] A trainer logged in
+2023-01-22 00:11:07.901 +05:30 [INF] A trainer wanted to edit their details 
+2023-01-22 00:12:02.678 +05:30 [INF] ----------------Program ends----------------------

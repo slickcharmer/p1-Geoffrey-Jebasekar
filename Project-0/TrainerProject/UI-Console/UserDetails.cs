@@ -20,6 +20,7 @@ namespace UI_Console
             Console.WriteLine("Press 1 to Add details");
             Console.WriteLine("press 2 to Edit details");
             Console.WriteLine("Press 3 to Delete details");
+            Console.WriteLine("Press 4 to View Details");
             //Console.WriteLine("Press 4 to return to Menu"); 
           
             
@@ -41,8 +42,8 @@ namespace UI_Console
                     return "EditDetails";
                 case "3":
                     return "DeleteDetails";
-                //case"4":
-                    //return "Menu";
+                case "4":
+                    return "ViewDetails";
                 default:
                     Console.WriteLine("Invalid response");
                     Console.ReadLine();

@@ -8,7 +8,8 @@ using System.Data;
 using System.Windows.Input;
 using System.Linq.Expressions;
 using System.IO;
-
+using System.Collections;
+using System.Reflection.PortableExecutable;
 
 namespace Data
 {
@@ -394,6 +395,74 @@ namespace Data
 
             }
             return education;
+        }
+
+        public ArrayList ViewDetails(string email)
+        {
+            ArrayList arrayList = new ArrayList();
+            string query = $"SELECT Signup.firstname,Signup.lastname,Signup.emailId,Signup.age,Education.educationType,Education.instituteName,Education.stream,Education.percentage,Companies.companyName,Companies.Title,Companies.industry,Companies.location,Skills.skill,Skills.Profeciency From Signup INNER JOIN Education on Signup.emailId = Education.emailid INNER join Companies on Signup.emailId = Companies.emailid INNER JOIN Skills on Signup.emailId = Skills.emailid WHERE Signup.emailId = '{email}'";
+            using SqlConnection connection = new SqlConnection(connectionstring) ;
+            connection.Open();
+            using SqlCommand command = new SqlCommand(query, connection);
+            using SqlDataReader reader = command.ExecuteReader();
+            while(reader.Read())
+            {
+                arrayList.Add(new Trainer_Details()
+                {
+                    firstname =reader.GetString(0),
+                    lastname = reader.GetString(1),
+                    emailid = reader.GetString(2),
+                    age = reader.GetInt32(3),
+                    educationType = reader.GetString(4),
+                    instituteName = reader.GetString(5),
+                    stream = reader.GetString(6),
+                    percentage = reader.GetString(7),
+                    companyName = reader.GetString(8),
+                    title = reader.GetString(9),
+                    industry = reader.GetString(10),
+                    location = reader.GetString(11),
+                    skill = reader.GetString(12),
+                    profeciencyInSkill = reader.GetInt32(13)
+
+                });
+            }
+
+            return arrayList;
+        }
+
+        public List<Trainer_Details> ViewDetailsDisconnected(string email)
+        {
+            List<Trainer_Details> trainer_Details = new List<Trainer_Details>();
+            string query = $"SELECT Signup.firstname,Signup.lastname,Signup.emailId,Signup.age,Education.educationType,Education.instituteName,Education.stream,Education.percentage,Companies.companyName,Companies.Title,Companies.industry,Companies.location,Skills.skill,Skills.Profeciency From Signup INNER JOIN Education on Signup.emailId = Education.emailid INNER join Companies on Signup.emailId = Companies.emailid INNER JOIN Skills on Signup.emailId = Skills.emailid WHERE Signup.emailId = '{email}';";
+            using SqlConnection connection = new SqlConnection(connectionstring);
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            DataTable dataTable = ds.Tables[0];
+            foreach(DataRow row in dataTable.Rows)
+            {
+                trainer_Details.Add(new Trainer_Details()
+                {
+                    firstname = (string)row[0],
+                    lastname = (string)row[1],
+                    emailid = (string)row[2],
+                    age = (int)row[3],
+                    educationType = (string)row[4],
+                    instituteName = (string)row[5],
+                    stream = (string)row[6],
+                    percentage = (string)row[7],
+                    companyName = (string)row[8],
+                    title = (string)row[9],
+                    industry = (string)row[10],
+                    location = (string)row[11],
+                    skill = (string)row[12],
+                    profeciencyInSkill = (int)row[13]
+
+                }) ;
+            }
+
+            return trainer_Details;
         }
     }
     

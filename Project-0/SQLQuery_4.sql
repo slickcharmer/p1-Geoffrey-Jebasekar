@@ -65,3 +65,9 @@ CREATE table Skills
 
 alter table Signup alter COLUMN age int not null
 alter TABLE Signup alter COLUMN phoneno VARCHAR(10) not null
+
+
+SELECT Signup.firstname,Signup.lastname,Signup.emailId,Signup.age,Education.educationType,Education.instituteName,Education.stream,Education.percentage,
+Companies.companyName,Companies.Title,Companies.industry,Companies.location,Skills.skill,Skills.Profeciency From Signup 
+INNER JOIN Education on Signup.emailId = Education.emailid INNER join Companies on Signup.emailId = Companies.emailid INNER JOIN Skills 
+on Signup.emailId = Skills.emailid WHERE Signup.emailId = 'geffshelby@gmail.com'

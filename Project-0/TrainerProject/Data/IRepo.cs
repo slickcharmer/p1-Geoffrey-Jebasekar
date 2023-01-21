@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -30,6 +31,10 @@ namespace Data
         Trainer_Education GetSpecificTrainersEducation(string emailid, string instituteName);
         List<Trainer_Companies> GetSpecificTrainersCompanies(string emailid);
         List<Trainer_Skills> GetSpecificTrainersSkills(string emailid);
+
+
+        ArrayList ViewDetails(string email);
+        List<Trainer_Details> ViewDetailsDisconnected(string email);
 
 
 

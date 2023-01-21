@@ -27,6 +27,8 @@ namespace Trainer
             EditDetails det = new EditDetails();
             DeleteDetails del = new DeleteDetails();
             IRepo repo1;
+            EditEducation education1 = new EditEducation();
+            
             
             IMenu menu = new Menu();
             IMenu menu1 = new EditDetails();
@@ -104,24 +106,9 @@ namespace Trainer
                                             $"Start Year: {disp.startYear}, End Year: {disp.endYear}, Percentage: {disp.percentage}");
 
                                     }
-                                    Console.WriteLine("Enter the institute name which details you want to edit");
-                                    string edu = Console.ReadLine();
-                                    //repo1 = new SqlRepo(conStr, f);
-                                    //var education = repo1.GetSpecificTrainersEducation(f, edu);
-                                    menu = new EditEducation(edu);
-                                    menu.Display();
-                                    string a = menu.UserChoice();
-                                    switch (a)
-                                    {
-                                        case "editdetails":
-                                            menu1 = new EditDetails();
-                                            break;
-                                        case "editeducation":
-                                            //menu = new editeducation();
-                                            break;
-
-
-                                    }
+                                    string emailid = Login.PassEmail();
+                                    education1.editEducation(emailid);
+                                    
 
                                     break;
 
@@ -144,7 +131,9 @@ namespace Trainer
                                             $"Employement Type: {disp.employementType}, Location: {disp.location}, Start Year: {disp.startYear}, End Year: {disp.endYear}");
 
                                     }
-
+                                    string emailid1 = Login.PassEmail();
+                                    EditExperience experience1 = new EditExperience(emailid1);
+                                    
                                     break;
                                 case "EditSkills":
                                     string e = Login.PassEmail();
@@ -157,6 +146,8 @@ namespace Trainer
                                         Console.WriteLine($"Skill: {disp.skill}, Profeciency: {disp.profeciencyInSkill}");
 
                                     }
+                                    string emailid2 = Login.PassEmail();
+                                    EditSkills skill1 = new EditSkills(emailid2);
 
                                     break;
                                 case "EditDetails":
@@ -255,6 +246,10 @@ namespace Trainer
                             }
                         }
                         break;
+                    case "ViewDetails":
+                        menu = new ViewDetails();
+                        break;
+
 
                     case "Education":
                         menu = new Education();

@@ -15,8 +15,8 @@ namespace Data
         {
             get;
             set;
-            
-                //password = value;
+
+            //password = value;
         }
         public string phoneno
         {
@@ -25,20 +25,20 @@ namespace Data
             //return phoneno;
 
             set;
-            
-                /*string pattern = @"[6-9]\d{9}";
-                var isCorrect = Regex.IsMatch(phoneno, pattern);
-                if (isCorrect)
-                {
-                    phoneno = value;
-                }
-                else
-                {
-                    throw new InvalidDataException("Please add a mobile no which has only 10 digits and no symbols or extensions in between");
-                }*/
+
+            /*string pattern = @"[6-9]\d{9}";
+            var isCorrect = Regex.IsMatch(phoneno, pattern);
+            if (isCorrect)
+            {
+                phoneno = value;
+            }
+            else
+            {
+                throw new InvalidDataException("Please add a mobile no which has only 10 digits and no symbols or extensions in between");
+            }*/
 
 
-            
+
         }
         public int age { get; set; }
         public string city { get; set; }
@@ -66,10 +66,10 @@ namespace Data
 
 
             set;
-               
-            
+
+
         }
-        
+
 
 
     }
@@ -106,9 +106,45 @@ namespace Data
         //Regex rx = new Regex(@"[1-5]");
         public int profeciencyInSkill
         {
-            get;set;
+            get; set;
         }
     }
-    
+
+    public class Trainer_Details
+    {
+        public string firstname { get; set; }
+        public string lastname { get; set; }
+        public string emailid
+        {
+            get;
+            set;
+        }
+        public int age { get; set; }
+        public string educationType { get; set; }
+        public string instituteName { get; set; }
+        public string stream { get; set; }
+        public string percentage { get; set; }
+        public string companyName { get; set; }
+        public string title { get; set; }
+        public string industry { get; set; }
+        public string location { get; set; }
+        public string skill { get; set; }
+        public int profeciencyInSkill
+        {
+            get; set;
+        }
+        public string TrainerDetails()
+        {
+            return @$"
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+First Name: {firstname}, Last Name: {lastname}, EmailId: {emailid}, Age: {age}, Education Type: {educationType}, Institute Name: {instituteName}, Stream: {stream}, Percentage: {percentage}, Company Name: {companyName}, Title: {title}, Industry: {industry}, Location: {location}, Skill: {skill}, Profeciency in skill: {profeciencyInSkill}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            ";
+        }
+            
+        
+
+    }
 
 }
