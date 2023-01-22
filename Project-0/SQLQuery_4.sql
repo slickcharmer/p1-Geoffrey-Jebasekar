@@ -15,7 +15,7 @@ constraint [PK_Signup] PRIMARY KEY(emailId)
 create table [Login]
 (
     --[UserLoginId] int not null,
-    emailid VARCHAR(25) not null,
+    emailid VARCHAR(25) not null UNIQUE,
     [password] VARCHAR(25) not null,
     CONSTRAINT [FK_Login]FOREIGN KEY( emailid ) REFERENCES Signup(emailId) on DELETE CASCADE on UPDATE CASCADE
 
@@ -75,3 +75,8 @@ on Signup.emailId = Skills.emailid WHERE Signup.emailId = 'geffshelby@gmail.com'
 SELECT firstname,lastname,phoneno,age,city from Signup where emailid = 'geffshelby@gmail.com'
 
 update Skills set skill='{skills.skill}',Profeciency='{skills.profeciencyInSkill}' where emailid='{emailid}' and skill='{skill}'
+
+
+select * from Signup
+SELECT * from Login
+ALTER TABLE LOGIN add CONSTRAINT Unique_Email UNIQUE(emailid)

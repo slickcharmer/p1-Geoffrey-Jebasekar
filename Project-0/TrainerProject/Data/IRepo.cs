@@ -1,10 +1,6 @@
-﻿using System;
+﻿
 using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Data
 {
@@ -34,7 +30,9 @@ namespace Data
         ArrayList ViewDetails(string email);
         List<Trainer_Details> ViewDetailsDisconnected(string email);
 
+        public bool ForgotPassword(string email,string phoneno);
 
+        void UpdatePass(string email, string password);
 
 
         void DeleteAcount();

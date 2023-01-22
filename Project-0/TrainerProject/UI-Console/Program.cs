@@ -2,9 +2,6 @@
 global using Serilog;
 using UI_Console;
 using Data;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Security.Cryptography.X509Certificates;
 
 
 namespace Trainer
@@ -22,10 +19,7 @@ namespace Trainer
             List<Trainer_Signup> GetDetails = new List<Trainer_Signup>();
             
             SqlRepo repo = new SqlRepo(conStr);
-            Signup signup = new Signup();
-            Login login = new Login();
-            EditDetails det = new EditDetails();
-            DeleteDetails del = new DeleteDetails();
+            
             IRepo repo1;
             EditEducation education1 = new EditEducation();
             
@@ -33,7 +27,7 @@ namespace Trainer
             IMenu menu = new Menu();
             IMenu menu1 = new EditDetails();
             
-            //string email = login.PassEmail();
+            
             
             
             bool repeat = true;
@@ -54,10 +48,12 @@ namespace Trainer
                         var trainerdet = repo.GetAllTrainers();
                         foreach(var trainer in trainerdet) 
                         {
-                            //var r = trainerdet.GetTrainer();
+                            
                             Console.WriteLine(trainer.GetTrainer());
-                            //Console.ReadLine();
+                            
                         }
+                        Console.WriteLine("Press any key to return to Menu page");
+                        Console.ReadLine();
                         break;
                         
                         
@@ -66,8 +62,7 @@ namespace Trainer
                         menu = new Signup();
                         break;
                     case "Login":
-                        //repeat = false;
-                        //flag = 1;
+                        
                         Log.Logger.Information("A trainer logged in");
                         menu = new Login();
                         break;
@@ -83,10 +78,10 @@ namespace Trainer
                         Log.Logger.Information("A trainer wanted to edit their details ");
                         bool rep = true;
                         menu = new EditDetails();
-                        //menu.Display();
+                        
                         while(rep)
                         {
-                            //menu = new EditDetails();
+                            
                             menu.Display();
                             string choice = menu.UserChoice();
                             switch (choice) 
@@ -176,8 +171,7 @@ namespace Trainer
                     case "DeleteDetails":
                         Log.Logger.Information("A trainer wanted to delete their details or their account");
                         bool repe = true;
-                        //menu = new EditDetails();
-                        //menu.Display();
+                        
                         while (repe)
                         {
                             menu = new DeleteDetails();
@@ -206,7 +200,7 @@ namespace Trainer
                                     repo1 = new SqlRepo(conStr, f);
                                     repo1.DeleteEducation(education);
 
-                                    //del.DeleteEducation();
+                                    
                                     break;
 
                                 case "DeleteExperience":
@@ -226,7 +220,7 @@ namespace Trainer
                                     repo1 = new SqlRepo(conStr, g);
                                     repo1.DeleteExperience(experience);
 
-                                    //del.DeleteExperience();
+                                    
                                     break;
                                 case "DeleteSkills":
                                     string e = Login.PassEmail();
@@ -244,7 +238,7 @@ namespace Trainer
                                     repo1 = new SqlRepo(conStr, e);
                                     repo1.DeleteSkill(skill);
                                     
-                                    //del.DeleteEducation();
+                                    
 
                                     break;
                                 case "DeleteAccount":
@@ -284,25 +278,7 @@ namespace Trainer
                 
             }
             
-            /*IDetails details = new Login();
-            if (flag==1)
-            {
-                repeat = true;
-                while(repeat)
-                {
-                    string a = details.Display();
-                    switch(a)
-                    {
-                        case "UserDetails":
-                            break;
-                        case "Signup":
-                            menu=new Signup();
-                            break;
-                    }
-                }
-
-
-            }*/
+            
             
         }
     }

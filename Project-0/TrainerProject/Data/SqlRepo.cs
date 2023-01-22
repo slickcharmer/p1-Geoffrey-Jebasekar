@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Data.SqlClient;
 using System.Data;
-using System.Windows.Input;
-using System.Linq.Expressions;
-using System.IO;
+
+
 using System.Collections;
-using System.Reflection.PortableExecutable;
+
 
 namespace Data
 {
@@ -37,7 +32,7 @@ namespace Data
             using SqlConnection connection = new SqlConnection(connectionstring);
             connection.Open();
             string query = @"insert into Signup(firstname,lastname,emailid,password,phoneno,age,city)values(@firstname,@lastname,@emailid,@password,@phoneno,@age,@city)";
-            //string query = @"insert into restaurants (Name, ZipCode)  values (@name, @zipcode)";
+            
             SqlCommand command = new SqlCommand(query,connection);
             command.Parameters.AddWithValue("@firstname", signup.firstname);
             command.Parameters.AddWithValue("@lastname", signup.lastname);
@@ -49,9 +44,7 @@ namespace Data
             int rows = command.ExecuteNonQuery();
             Console.WriteLine($"{rows} rows affected");
             return signup;
-            /*string userinputemail;
-            string query = $"select [emailid] from TrainerSignup where [emailid] = '{userinputemail}'";
-            return userinputemail;*/
+            
         }
 
        
@@ -75,7 +68,7 @@ namespace Data
             using SqlConnection connection = new SqlConnection(connectionstring);
             connection.Open();
             string query = @"insert into Education values(@emailid,@educationType,@instituteName,@stream,@startYear,@endYear,@percentage)";
-            //string query = @"insert into restaurants values (@name, @zipcode)";
+            
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@emailid", education.emailid);
             command.Parameters.AddWithValue("@educationType", education.educationType);
@@ -94,7 +87,7 @@ namespace Data
             using SqlConnection connection = new SqlConnection(connectionstring);
             connection.Open();
             string query = @"insert into Companies(emailid,companyName,Title,industry,employementType,location,startYear,endYear) values(@emailid,@companyName,@Title,@industry,@employementType,@location,@startYear,@endYear)";
-            //string query = @"insert into restaurants values (@name, @zipcode)";
+            
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@emailid", companies.emailid);
             command.Parameters.AddWithValue("@companyName", companies.companyName);
@@ -222,7 +215,7 @@ namespace Data
                 Console.WriteLine("Create an account to login");
                 return 2;
             }
-            //throw new NotImplementedException();
+            
         }
 
         public void DeleteAcount()
@@ -280,7 +273,7 @@ namespace Data
             {
                 skills.Add(new Trainer_Skills()
                 {
-                    //emailid=reader.GetString(0),
+                    
                     skill=reader.GetString(0),
                     profeciencyInSkill=reader.GetInt32(1)
 
@@ -288,7 +281,7 @@ namespace Data
                 });
             }
             return skills;
-            //throw new NotImplementedException();
+            
         }
 
         public List<Trainer_Education> GetTrainersEducation(string emailid)
@@ -303,7 +296,7 @@ namespace Data
             {
                 education.Add(new Trainer_Education()
                 {
-                    //emailid=reader.GetString(0),
+                    
                     educationType = reader.GetString(0),
                     instituteName = reader.GetString(1),
                     stream = reader.GetString(2),
@@ -330,7 +323,7 @@ namespace Data
             {
                 companies.Add(new Trainer_Companies()
                 {
-                    //emailid=reader.GetString(0),
+                    
                     companyName = reader.GetString(0),
                     title = reader.GetString(1),
                     industry = reader.GetString(2),
@@ -478,6 +471,42 @@ namespace Data
             }
 
             return trainer_Details;
+        }
+
+        public bool ForgotPassword(string email, string phoneno)
+        {
+            string query = $"select emailid,phoneno from Signup where emailid='{email}' and phoneno='{phoneno}' ";
+            using SqlConnection connection = new SqlConnection(connectionstring);
+            connection.Open();
+            using SqlCommand command = new SqlCommand(query, connection);
+            using SqlDataReader reader = command.ExecuteReader();
+            if(reader.Read())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
+
+            
+        }
+
+        public void UpdatePass(string email, string password)
+        {
+            string query = $"update Signup set password='{password}' where emailid='{email}'";
+            string query_1 = $"update Login set password='{password}' where emailid='{email}'";
+            using SqlConnection connection = new SqlConnection(connectionstring);
+            connection.Open();
+            using SqlCommand command = new SqlCommand(query, connection);
+            using SqlCommand command1 = new SqlCommand(query_1, connection);
+            int n1 = command.ExecuteNonQuery();
+            int n2 = command1.ExecuteNonQuery();
+            Console.WriteLine($"{n1} rows affected");
+            Console.WriteLine($"{n2} rows affected");
+            Console.WriteLine("Password Updated successfully");
+
         }
     }
     

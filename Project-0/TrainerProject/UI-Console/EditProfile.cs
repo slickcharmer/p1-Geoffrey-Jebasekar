@@ -132,7 +132,14 @@ namespace UI_Console
                         int f = Convert.ToInt32(Console.ReadLine());
                         if (f != null)
                         {
-                            signup.age = f;
+                            if (f >= 21)
+                            {
+                                signup.age = f;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Trainers age should be greater than or equal to 21");
+                            }
 
 
                         }
