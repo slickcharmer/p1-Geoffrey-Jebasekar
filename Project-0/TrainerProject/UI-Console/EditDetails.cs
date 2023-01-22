@@ -15,6 +15,7 @@ namespace UI_Console
             Console.WriteLine("Press 1 to edit Education");
             Console.WriteLine("Press 2 to edit Experience");
             Console.WriteLine("Press 3 to edit Skills");
+            Console.WriteLine("Press 4 to edit profile details");
 
 
         }
@@ -40,6 +41,8 @@ namespace UI_Console
 
                 case "3":
                     return "EditSkills";
+                case "4":
+                    return "EditProfile";
 
                 default:
                     Console.WriteLine("Enter a valid response");
@@ -49,19 +52,7 @@ namespace UI_Console
             }
         }
 
-        //public string EditEducation()
-        //   {
-        //       return "null";
-        //   }
-
-        //   public string EditExperience()
-        //   {
-        //       return "";
-        //   }
-        //   public string EditSkills()
-        //   {
-        //       return "";
-        //   }
+        
     }
 }
 

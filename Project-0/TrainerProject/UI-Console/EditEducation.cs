@@ -5,24 +5,32 @@ using System.Text;
 using System.Threading.Tasks;
 using Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace UI_Console
 {
     public class EditEducation
     {
-        //public List<Trainer_Education> education = new List<Trainer_Education>();
+        
         static string email = Login.PassEmail();
 
         static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         IRepo repo1 = new SqlRepo(conStr, email);
-        Trainer_Education edu = new Trainer_Education();
+        
+        public bool Percentage(string percent)
+        {
+            Regex r = new Regex(@"^[0-9][0-9].?[0-9]?%$");
+            if (r.IsMatch(percent))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
-        //string instituteName;
-        //public EditEducation(string name)
-        //{
-        //    instituteName = name;
-        //}
 
         public void editEducation(string emailid)
         {
@@ -84,6 +92,7 @@ namespace UI_Console
                         if(n>0)
                         {
                             Console.WriteLine($"{n} row(s) affected");
+                            Console.WriteLine("User Education updated successfully");
                         }
                         connection.Close();
                         repeat = false;
@@ -109,8 +118,24 @@ namespace UI_Console
                         education.endYear = Console.ReadLine();
                         break;
                     case "7":
-                        Console.WriteLine("Enter your new Education graduation percentage");
-                        education.percentage = Console.ReadLine();
+                        Console.WriteLine("Enter your new Education percentage in the specified format");
+                        Console.WriteLine("For eg: 92% or 92.4%");
+
+                        string p = Console.ReadLine();
+                        if (p != null)
+                        {
+                            bool percentage = Percentage(p);
+                            if (percentage)
+                            {
+                                education.percentage = p;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please add percentage in the spcified format");
+                            }
+
+                        }
+                        
                         break;
                     default:
                         Console.WriteLine("Enter a valid response");

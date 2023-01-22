@@ -45,6 +45,7 @@ namespace Trainer
                 switch(userInput)
                 {
                     case "Exit":
+                        Log.Logger.Information("----------------Program ends----------------------");
                         Console.WriteLine("Thanks for visiting--------Come again");
                         repeat = false;
                         break;
@@ -150,7 +151,21 @@ namespace Trainer
                                     EditSkills skill1 = new EditSkills(emailid2);
 
                                     break;
-                                case "EditDetails":
+                                case "EditProfile":
+                                    string p = Login.PassEmail();
+                                    Console.WriteLine("------------------Profile------------------");
+                                    repo1 = new SqlRepo(conStr);
+                                    var profDisp = repo1.GetSpecificTrainer(p);
+                                    Console.WriteLine("Welcome-------------"+p);
+                                    foreach(var disp in profDisp)
+                                    {
+                                        Console.WriteLine(disp.GetSpecificTrainer());
+                                    }
+                                    Console.WriteLine("Press any key to edit your details");
+                                    Console.ReadKey();
+                                    EditProfile profile = new EditProfile(p);
+                                    
+
 
                                     break;
                                     
@@ -268,7 +283,7 @@ namespace Trainer
                 }
                 
             }
-            Log.Logger.Information("----------------Program ends----------------------");
+            
             /*IDetails details = new Login();
             if (flag==1)
             {

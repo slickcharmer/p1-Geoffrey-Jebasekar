@@ -71,3 +71,7 @@ SELECT Signup.firstname,Signup.lastname,Signup.emailId,Signup.age,Education.educ
 Companies.companyName,Companies.Title,Companies.industry,Companies.location,Skills.skill,Skills.Profeciency From Signup 
 INNER JOIN Education on Signup.emailId = Education.emailid INNER join Companies on Signup.emailId = Companies.emailid INNER JOIN Skills 
 on Signup.emailId = Skills.emailid WHERE Signup.emailId = 'geffshelby@gmail.com'
+
+SELECT firstname,lastname,phoneno,age,city from Signup where emailid = 'geffshelby@gmail.com'
+
+update Skills set skill='{skills.skill}',Profeciency='{skills.profeciencyInSkill}' where emailid='{emailid}' and skill='{skill}'

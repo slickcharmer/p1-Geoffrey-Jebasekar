@@ -75,6 +75,7 @@ namespace UI_Console
                         if (n > 0)
                         {
                             Console.WriteLine($"{n} row(s) affected");
+                            Console.WriteLine("User Experience updated successfully");
                         }
                         connection.Close();
                         repeat = false;

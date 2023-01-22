@@ -21,7 +21,7 @@ namespace UI_Console
             Console.WriteLine("press 2 to Edit details");
             Console.WriteLine("Press 3 to Delete details");
             Console.WriteLine("Press 4 to View Details");
-            //Console.WriteLine("Press 4 to return to Menu"); 
+            
           
             
         }

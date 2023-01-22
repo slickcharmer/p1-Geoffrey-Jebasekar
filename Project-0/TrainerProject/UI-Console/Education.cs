@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace UI_Console
 {
     public class Education : IMenu
     {
-        int i = 0,j=0,k=0,l=0,m=0;
+        
         public Education() { }
         static Trainer_Education education = new Trainer_Education();
-        //Education edu = new Education();
-
-        //Login login = new Login();
-        //public Education(string val)
-        //{
-        //    email=val;
-        //}
+        
         static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         IRepo repo = new SqlRepo(conStr);
         string val = Login.PassEmail();
         
-        //public string email;
-        //IRepo repo = new SqlRepo();
+        public bool Percentage(string percent)
+        {
+            Regex r = new Regex(@"^[0-9][0-9].?[0-9]?%$");
+            if(r.IsMatch(percent))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void Display()
         {
             Console.WriteLine("Trainer's Education Details");
-            //Console.WriteLine("[9] City - " + trs.city);
+            
             Console.WriteLine("Hey ------------------ " + val);
             education.emailid = val;
             Console.WriteLine("[7] Percentage - " + education.percentage);
@@ -58,7 +63,7 @@ namespace UI_Console
                         
 
                             repo.AddE(education);
-                            //repo1.AddL(login);
+                            
                             Console.WriteLine("Successfully added Education");
                             return "AddDetails";
                         }
@@ -74,34 +79,47 @@ namespace UI_Console
                     
 
                 case "2":
-                    i++;
+                    
                     Console.WriteLine("Enter your Education type");
                     education.educationType = Console.ReadLine();
                     return "Education";
                 case "3":
-                    j++;
+                    
                     Console.WriteLine("Enter your Institute name");
                     education.instituteName = Console.ReadLine();
                     return "Education";
                 case "4":
-                    k++;
+                    
                     Console.WriteLine("Enter your Stream");
                     education.stream = Console.ReadLine();
                     return "Education";
                 case "5":
-                    k++;
                     Console.WriteLine("Enter your Start Year");
                     education.startYear = Console.ReadLine();
                     return "Education";
                 case "6":
-                    l++;
                     Console.WriteLine("Enter your End Year");
                     education.endYear = Console.ReadLine();
                     return "Education";
                 case "7":
-                    m++;
-                    Console.WriteLine("Enter your Percentage");
-                    education.percentage = Console.ReadLine();
+                    Console.WriteLine("Enter your Percentage in the specified format");
+                    Console.WriteLine("For eg: 92% or 92.4%");
+                    
+                    string p = Console.ReadLine();
+                    if(p!=null)
+                    {
+                        bool percentage = Percentage(p);
+                        if(percentage)
+                        {
+                            education.percentage = p;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please add percentage in the spcified format");
+                        }
+
+                    }
+                    
                     return "Education";
                 default:
                     Console.WriteLine("Enter a valid response");
@@ -109,7 +127,7 @@ namespace UI_Console
                         
 
             }
-            //throw new NotImplementedException();
+            
         }
     }
 }

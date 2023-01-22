@@ -22,13 +22,7 @@ namespace Data
         {
 
         }
-        //public SqlRepo(string connectionstring,string val, string skill)
-        //{
-        //    this.connectionstring = connectionstring;
-        //    email = val;
-        //    this.skill = skill;
-
-        //}
+        
         public SqlRepo(string connectionString, string val)
         {
             connectionstring = connectionString;
@@ -161,13 +155,37 @@ namespace Data
 
             return signup;
         }
-        
 
-        
+        public List<Trainer_Signup> GetSpecificTrainer(string email)
+        {
+            List<Trainer_Signup> signup = new List<Trainer_Signup>();
+            string query = $"SELECT firstname,lastname,phoneno,age,city from Signup where emailid = '{email}'";
+            using SqlConnection connection = new SqlConnection(connectionstring);
+            connection.Open();
+            using SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while(reader.Read()) 
+            {
+                signup.Add(new Trainer_Signup()
+                {
+                    firstname = reader.GetString(0),
+                    lastname = reader.GetString(1),
+                    phoneno = reader.GetString(2),
+                    age = reader.GetInt32(3),
+                    city = reader.GetString(4)
 
-        
+                });
+            }
+            return signup;
 
-        
+
+            
+        }
+
+
+
+
+
 
         public int IsValidLogin(string emailid)
         {
@@ -360,10 +378,7 @@ namespace Data
 
         //}
 
-        public List<Trainer_Signup> GetSpecificTrainer()
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public List<Trainer_Companies> GetSpecificTrainersCompanies(string emailid)
         {

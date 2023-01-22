@@ -60,6 +60,7 @@ namespace UI_Console
                         if(n>0)
                         {
                             Console.WriteLine($"{n} row(s) affected successfully");
+                            Console.WriteLine("User SKills updated successfully");
                         }
                         else
                         {
