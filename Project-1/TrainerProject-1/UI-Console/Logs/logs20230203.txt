@@ -1,0 +1,27 @@
+2023-02-03 00:01:17.211 +05:30 [INF] --------------------Program is started------------------
+2023-02-03 00:01:39.656 +05:30 [INF] A trainer logged in
+2023-02-03 00:02:16.624 +05:30 [INF] A trainer wanted to add their details
+2023-02-03 00:02:28.631 +05:30 [INF] A trainer wanted to add their details
+2023-02-03 00:05:48.279 +05:30 [INF] A trainer wanted to add their details
+2023-02-03 00:05:52.829 +05:30 [INF] ----------------Program ends----------------------
+2023-02-03 00:06:02.428 +05:30 [INF] --------------------Program is started------------------
+2023-02-03 00:06:13.524 +05:30 [INF] A trainer logged in
+2023-02-03 00:06:30.087 +05:30 [INF] A trainer wanted to add their details
+2023-02-03 00:06:42.062 +05:30 [INF] A trainer wanted to add their details
+2023-02-03 01:00:29.575 +05:30 [INF] --------------------Program is started------------------
+2023-02-03 01:00:35.515 +05:30 [INF] A trainer logged in
+2023-02-03 01:09:28.339 +05:30 [INF] A trainer wanted to edit their details 
+2023-02-03 02:10:22.643 +05:30 [INF] --------------------Program is started------------------
+2023-02-03 02:10:24.860 +05:30 [INF] A trainer logged in
+2023-02-03 02:10:39.551 +05:30 [INF] A trainer wanted to edit their details 
+2023-02-03 02:12:23.973 +05:30 [INF] ----------------Program ends----------------------
+2023-02-03 02:22:24.622 +05:30 [INF] --------------------Program is started------------------
+2023-02-03 02:22:27.921 +05:30 [INF] A trainer logged in
+2023-02-03 02:23:03.032 +05:30 [INF] A trainer wanted to edit their details 
+2023-02-03 02:25:35.551 +05:30 [INF] --------------------Program is started------------------
+2023-02-03 02:25:37.980 +05:30 [INF] A trainer logged in
+2023-02-03 02:25:53.328 +05:30 [INF] A trainer wanted to edit their details 
+2023-02-03 02:28:57.228 +05:30 [INF] --------------------Program is started------------------
+2023-02-03 02:29:00.220 +05:30 [INF] A trainer logged in
+2023-02-03 02:29:20.078 +05:30 [INF] A trainer wanted to edit their details 
+2023-02-03 02:30:07.107 +05:30 [INF] ----------------Program ends----------------------

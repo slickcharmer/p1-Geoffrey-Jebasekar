@@ -1,5 +1,5 @@
 ﻿using EntityLayer.Entities;
-
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using Models;
 using System;
 using System.Collections;
@@ -168,6 +168,57 @@ namespace BusinessLogic
             return editEduDet.ToList();
         }
 
+        public IEnumerable<Trainer_Companies> GetTrainersExperience(string emailid)
+        {
+            var editExp = context.Companies;
+            var editExpDet = (
+                                from exp in editExp
+                                where exp.Emailid == emailid
+                                select new Trainer_Companies()
+                                {
+                                    companyName = exp.CompanyName,
+                                    title = exp.Title,
+                                    location = exp.Location,
+                                    experience = exp.Experience
+                                }
+                ) ;
+            return editExpDet.ToList();
+        }
+        public IEnumerable<Trainer_Skills> GetTrainersSkills(string emailid)
+        {
+            var editSkill = context.Skills;
+            var editSkillDet = (
+                                from skills in editSkill
+                                where skills.Emailid == emailid
+                                select new Trainer_Skills()
+                                {
+                                    skill = skills.Skill1,
+                                    profeciencyInSkill = skills.Profeciency
+                                }
+                );
+            return editSkillDet.ToList();
+            
+        }
+        public IEnumerable<Trainer_Signup> GetTrainer(string emailid)
+        {
+            var signup = context.Signups;
+            var trainerDet = (from tr in signup
+                              where tr.EmailId == emailid
+                              select new Trainer_Signup()
+                              {
+                                  firstname = tr.Firstname,
+                                  lastname = tr.Lastname,
+                                  age = tr.Age,
+                                  phoneno = tr.Phoneno,
+                                  city = tr.City
+
+
+
+
+                              });
+            return trainerDet.ToList();
+        }
+
         //public List<Trainer_Education> GetTrainersEducation(string emailid, string instituteName)
         //{
         //    var editEdu = context.Educations;
@@ -223,7 +274,7 @@ namespace BusinessLogic
         {
             try
             {
-                context.Educations.Update(map.MapEducation(education));
+                context.Educations.Update(map.MapEditEducation(education));
                 context.SaveChanges();
                 Console.WriteLine("Changes are successfully added");
             }
@@ -235,6 +286,50 @@ namespace BusinessLogic
             
         }
 
-       
+        public void UpdateExperience(Trainer_Companies experience)
+        {
+            try
+            {
+                context.Companies.Update(map.MapEditCompany(experience));
+                context.SaveChanges();
+                Console.WriteLine("Changes are successfully added");
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+        }
+
+        public void UpdateSkill(Trainer_Skills skills)
+        {
+            try
+            {
+                context.Skills.Update(map.MapEditSkill(skills));
+                context.SaveChanges();
+                Console.WriteLine("Changes are successfully added");
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public void UpdateProfile(Trainer_Signup signup)
+        {
+            try
+            {
+                context.Signups.Update(map.MapEditProfile(signup));
+                context.SaveChanges();
+                Console.WriteLine("Changes are successfully added");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

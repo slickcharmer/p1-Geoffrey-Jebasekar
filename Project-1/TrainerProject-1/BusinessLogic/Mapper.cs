@@ -134,22 +134,12 @@ namespace BusinessLogic
             };
         }
 
-        //public TrainerDet.Education MapEditEducation(Trainer_Education _education)
-        //{
-
-        //    TrainerDet.Education education = new TrainerDet.Education();
-        //    education.Emailid = _education.emailid;
-        //    education.EducationType = _education.educationType;
-        //    education.InstituteName = _education.instituteName;
-        //    education.Stream = _education.stream;
-        //    education.StartYear = _education.startYear;
-        //    education.EndYear = _education.endYear;
-        //    education.Percentage = _education.percentage;
-        //}
+       
         public TrainerDet.Education MapEditEducation(Trainer_Education _education)
         {
             return new TrainerDet.Education()
             {
+                Id = _education.id,
                 Emailid = _education.emailid,
                 EducationType = _education.educationType,
                 InstituteName = _education.instituteName,
@@ -157,6 +147,51 @@ namespace BusinessLogic
                 StartYear = _education.startYear,
                 EndYear = _education.endYear,
                 Percentage = _education.percentage
+            };
+        }
+        public TrainerDet.Company MapEditCompany(Trainer_Companies _company)
+        {
+            return new TrainerDet.Company()
+            {
+                Id = _company.id,
+                Emailid = _company.emailid,
+                CompanyName = _company.companyName,
+                Title = _company.title,
+                Location = _company.location,
+                Experience = _company.experience
+
+
+            };
+        }
+        public TrainerDet.Skill MapEditSkill(Trainer_Skills _skills)
+        {
+            return new TrainerDet.Skill()
+            {
+                Id = _skills.id,
+                Emailid = _skills.emailid,
+                Skill1 = _skills.skill,
+                Profeciency = _skills.profeciencyInSkill
+
+
+            };
+        }
+
+        public TrainerDet.Signup MapEditProfile(Trainer_Signup _signup)
+        {
+            return new TrainerDet.Signup()
+            {
+                EmailId = _signup.emailId,
+                Password = _signup.password,
+                Firstname = _signup.firstname,
+                Lastname = _signup.lastname,
+                Phoneno = _signup.phoneno,
+                Age = _signup.age,
+                City = _signup.city
+             
+                
+
+
+
             };
         }
     }

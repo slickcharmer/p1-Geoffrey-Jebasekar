@@ -1,4 +1,6 @@
-﻿using Data;
+﻿//using Data;
+using BusinessLogic;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,10 @@ namespace UI_Console
         static Trainer_Skills skills = new Trainer_Skills();
         //static Login login = new Login();
         //readonly string val = login.PassEmail();
-        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-        IRepo repo = new SqlRepo(conStr);
+        //static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        //IRepo repo = new SqlRepo(conStr);
         //IRepo repo = new SqlRepo();
+        IEFRepo repo = new TrainerEFRepo();
         string val = Login.PassEmail();
         public void Display()
         {
@@ -40,8 +43,8 @@ namespace UI_Console
                         try
                         {
                             Console.WriteLine("Adding Trainer Skill");
-                        
 
+                            skills.emailid = val;
                             repo.AddSk(skills);
                             //repo1.AddL(login);
                             Console.WriteLine("Skills added successfully");

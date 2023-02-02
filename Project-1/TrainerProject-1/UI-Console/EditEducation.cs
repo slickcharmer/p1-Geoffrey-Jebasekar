@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using BusinessLogic;
 using EntityLayer.Entities;
+using Microsoft.IdentityModel.Tokens;
 
 namespace UI_Console
 {
@@ -53,11 +54,11 @@ namespace UI_Console
             
 
             Trainer_Education education = new Trainer_Education();
-            EntityLayer.Entities.Education education1 = new EntityLayer.Entities.Education();
+            
 
             
 
-            if (editEduDet != null)
+            if (!editEduDet.IsNullOrEmpty())
             {
                 foreach (var edu in editEduDet)
                 {

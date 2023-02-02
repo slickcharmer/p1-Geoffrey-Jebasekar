@@ -17,7 +17,7 @@ create table [Login]
 
     emailid VARCHAR(25) not null,
     [password] VARCHAR(25) not null,
-	CONSTRAINT [PK_LOGIN] PRIMARY KEY(emailid),
+	CONSTRAINT [PK_LOGIN] PRIMARY KEY(emailid), 
     CONSTRAINT [FK_Login]FOREIGN KEY( emailid ) REFERENCES Signup(emailId) on DELETE CASCADE on UPDATE CASCADE
 
 
@@ -93,6 +93,12 @@ SELECT @@SERVERNAME AS 'Server Name'
 
 insert into Signup values ('Geff','Shelby','geffshelby@gmail.com','12345678','9876505432',21,'Chennai');
 insert into Login values('geffshelby@gmail.com','12345678');
-insert into Education values('geffshelby@gmail.com','PG','Loyola','IT','2023','2025','80');
+insert into Education values('geffshelby@gmail.com','UG','Loyola','IT','2023','2025','80');
 insert into Companies values('geffshelby@gmail.com','Amazon','Developer','Bangalore','3');
 insert into Skills values('geffshelby@gmail.com','C++',5);
+
+delete from Education where emailid = 'geffshelby@gmail.com' and instituteName = 'Loyola' and id=6
+
+alter table Education 
+alter column percentage varchar(10) not null
+

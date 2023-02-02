@@ -105,12 +105,13 @@ namespace Trainer
                                     Console.WriteLine("Welcome " + f);
                                     foreach (var disp in eduDisp)
                                     {
-                                        Console.WriteLine($"Education Type: {disp.educationType}, " + "\n" +
-                                            $"Institute Name: {disp.instituteName}, " + "\n" +
-                                            $"Stream: {disp.stream}, " + "\n" +
-                                            $"Start Year: {disp.startYear}," + "\n" +
-                                            $"End Year: {disp.endYear}, " + "\n" +
+                                        Console.WriteLine($"Education Type: {disp.educationType} " + "\n" +
+                                            $"Institute Name: {disp.instituteName} " + "\n" +
+                                            $"Stream: {disp.stream} " + "\n" +
+                                            $"Start Year: {disp.startYear} " + "\n" +
+                                            $"End Year: {disp.endYear} " + "\n" +
                                             $"Percentage: {disp.percentage}");
+                                        Console.WriteLine("====================================================\n");
 
                                     }
                                     //string emailid = Login.PassEmail();
@@ -131,13 +132,18 @@ namespace Trainer
                                     Console.WriteLine("---------------Experience---------------");
                                     //repo1 = new SqlRepo(conStr);
                                     //var expDisp = repo1.GetTrainersCompanies(g);
+                                    var expDisp = repo.GetTrainersExperience(g);
                                     Console.WriteLine("Welcome " + g);
-                                    //foreach (var disp in expDisp)
-                                    //{
-                                    //    Console.WriteLine($"Company name: {disp.companyName}, Title: {disp.title}, Industry: {disp.industry}, " +
-                                    //        $"Employement Type: {disp.employementType}, Location: {disp.location}, Start Year: {disp.startYear}, End Year: {disp.endYear}");
+                                    foreach (var disp in expDisp)
+                                    {
+                                        Console.WriteLine($"Company name: {disp.companyName} " + "\n" +
+                                            $"Title: {disp.title} " + "\n" +
+                                            $"Location: {disp.location} " + "\n" +
+                                            $"Experience in years: {disp.experience}"
+                                            );
+                                        Console.WriteLine("=====================================================\n");
 
-                                    //}
+                                    }
                                     string emailid1 = Login.PassEmail();
                                     EditExperience experience1 = new EditExperience(emailid1);
                                     
@@ -147,12 +153,15 @@ namespace Trainer
                                     Console.WriteLine("---------------Skills---------------");
                                     //repo1 = new SqlRepo(conStr);
                                     //var skillDisp = repo1.GetTrainersSkills(e);
+                                    var skillDisp = repo.GetTrainersSkills(e);
                                     Console.WriteLine("Welcome " + e);
-                                    //foreach (var disp in skillDisp)
-                                    //{
-                                    //    Console.WriteLine($"Skill: {disp.skill}, Profeciency: {disp.profeciencyInSkill}");
+                                    foreach (var disp in skillDisp)
+                                    {
+                                        Console.WriteLine($"Skill: {disp.skill} " + "\n" +
+                                            $"Profeciency: {disp.profeciencyInSkill}");
 
-                                    //}
+                                        Console.WriteLine("=====================================================\n");
+                                    }
                                     string emailid2 = Login.PassEmail();
                                     EditSkills skill1 = new EditSkills(emailid2);
 
@@ -162,11 +171,18 @@ namespace Trainer
                                     Console.WriteLine("------------------Profile------------------");
                                     //repo1 = new SqlRepo(conStr);
                                     //var profDisp = repo1.GetSpecificTrainer(p);
+                                    var profDisp = repo.GetTrainer(p);
                                     Console.WriteLine("Welcome-------------"+p);
-                                    //foreach(var disp in profDisp)
-                                    //{
-                                    //    Console.WriteLine(disp.GetSpecificTrainer());
-                                    //}
+                                    foreach (var disp in profDisp)
+                                    {
+                                        Console.WriteLine($"First name: {disp.firstname} " + "\n" +
+                                            $"Last name: {disp.lastname} " + "\n" +
+                                            $"Phone number: {disp.phoneno} " + "\n" +
+                                            $"Age: {disp.age} " + "\n" + 
+                                            $"City: {disp.city} "
+                                            );
+                                        Console.WriteLine("=====================================================\n");
+                                    }
                                     Console.WriteLine("Press any key to edit your details");
                                     Console.ReadKey();
                                     EditProfile profile = new EditProfile(p);

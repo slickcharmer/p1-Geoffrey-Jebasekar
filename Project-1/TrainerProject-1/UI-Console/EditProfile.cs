@@ -1,13 +1,17 @@
-﻿using Data;
+﻿//using Data;
+using Models;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System;
+using BusinessLogic;
+using EntityLayer.Entities;
+using Microsoft.IdentityModel.Tokens;
 
 namespace UI_Console
 {
     public class EditProfile
     {
-        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        
         public bool Phone(string phone)
         {
             Regex r = new Regex(@"^[6-9]\d{9}$");
@@ -33,23 +37,37 @@ namespace UI_Console
         public EditProfile(string email)
         {
             Trainer_Signup signup = new Trainer_Signup();
+            Mapper mapper = new Mapper();
+            TutorAppContext context = new TutorAppContext();
+            IEFRepo repo = new TrainerEFRepo();
             bool repeat = true;
-            string query = $"SELECT firstname,lastname,phoneno,age,city from Signup where emailid = '{email}'";
-            using SqlConnection connection = new SqlConnection(conStr);
-            connection.Open();
-            using SqlCommand command = new SqlCommand(query,connection);
-            using SqlDataReader reader = command.ExecuteReader();
-            while(reader.Read())
+            //string query = $"SELECT firstname,lastname,phoneno,age,city from Signup where emailid = '{email}'";
+            var editProf = context.Signups;
+            var editProfDet = from tr in editProf
+                              where tr.EmailId == email
+                              select tr;
+            if(!editProfDet.IsNullOrEmpty())
             {
-                signup.firstname = reader.GetString(0);
-                signup.lastname = reader.GetString(1);
-                signup.phoneno = reader.GetString(2);
-                signup.age = reader.GetInt32(3);
-                signup.city = reader.GetString(4);
+                foreach(var prof in editProfDet)
+                {
+                    signup.emailId = prof.EmailId;
+                    signup.password = prof.Password;
+                    signup.firstname = prof.Firstname;
+                    signup.lastname = prof.Lastname;
+                    signup.phoneno = prof.Phoneno;
+                    signup.age = prof.Age;
+                    signup.city = prof.City;
+                }
+                repeat = true;
             }
-            connection.Close();
-            reader.Close();
-            command.Dispose();
+            else
+            {
+                Console.WriteLine("Enter a valid institute name which is present in your profile");
+            }
+
+
+           
+            
             while (repeat)
             {
                 Console.WriteLine("Welcome-------------------"+email);
@@ -70,25 +88,21 @@ namespace UI_Console
                         break;
                     case "1":
                         
-                        string query_1 = $"update Signup set firstname='{signup.firstname}',lastname='{signup.lastname}',phoneno='{signup.phoneno}',age='{signup.age}',city='{signup.city}' where emailid = '{email}'";
-                        connection.Open();
-                        SqlCommand command1 = new SqlCommand(query_1, connection);
-                        int n = command1.ExecuteNonQuery();
+                        //string query_1 = $"update Signup set firstname='{signup.firstname}',lastname='{signup.lastname}',phoneno='{signup.phoneno}',age='{signup.age}',city='{signup.city}' where emailid = '{email}'";
+                        
                         try
                         {
-                            if (n > 0)
-                            {
-                                Console.WriteLine($"{n} row(s) affected");
-                                Console.WriteLine("User profile updated successfully");
-                            }
+
+                            repo.UpdateProfile(signup);
+                            Console.WriteLine("User profile updated successfully");
+                            
                         }
                         catch(Exception ex)
                         {
                             Console.WriteLine(ex.Message);
                             Console.WriteLine("Sorry.........Try saving again");
                         }
-                        connection.Close();
-                        command1.Dispose();
+                        
                         repeat = false;
                         break;
                     case "2":

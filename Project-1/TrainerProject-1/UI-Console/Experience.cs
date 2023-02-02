@@ -49,8 +49,8 @@ namespace UI_Console
                         try
                         {
                             Console.WriteLine("Adding Trainer Experience");
-                        
 
+                        experience.emailid = val;
                             repo.AddC(experience);
                             //repo1.AddL(login);
                             Console.WriteLine("Successfully added Trainer-------Redirecting you to Add Details page");

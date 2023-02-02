@@ -63,8 +63,8 @@ namespace UI_Console
                         try
                         {
                             Console.WriteLine("Adding Trainer Eduction");
-                        
 
+                            education.emailid = val;
                             repo.AddE(education);
                             
                             Console.WriteLine("Successfully added Education");

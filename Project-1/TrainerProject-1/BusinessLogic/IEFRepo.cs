@@ -30,11 +30,18 @@ namespace BusinessLogic
         public void AddSk(Trainer_Skills skills);
 
         List<Trainer_Education> GetTrainersEducation(string emailid);
+        IEnumerable<Trainer_Companies> GetTrainersExperience(string emailid);
+        IEnumerable<Trainer_Skills> GetTrainersSkills(string emailid);
+        IEnumerable<Trainer_Signup> GetTrainer(string emailid);
        // List<Trainer_Education> GetTrainersEducation(string emailid,string instituteName);
 
         Trainer_Education  GetTrainersEducation(string emailid, string instituteName);
 
         public void UpdateEducation(Trainer_Education education);
+        public void UpdateExperience(Trainer_Companies experience);
+        public void UpdateSkill(Trainer_Skills skills);
+        public void UpdateProfile(Trainer_Signup signup);
+
 
 
 

@@ -1,4 +1,8 @@
-﻿using Data;
+﻿//using Data;
+using BusinessLogic;
+using EntityLayer.Entities;
+using Microsoft.IdentityModel.Tokens;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -13,29 +17,37 @@ namespace UI_Console
         static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public EditSkills(string emailid)
         {
+            TutorAppContext context= new TutorAppContext();
             Trainer_Skills skills = new Trainer_Skills();
+            IEFRepo repo = new TrainerEFRepo();
             bool repeat = false;
             Console.WriteLine("Enter the Skill name which details which you want to edit");
             string skill = Console.ReadLine();
             string query = $"select skill,Profeciency from Skills where emailid='{emailid}' and skill='{skill}'";
-            SqlConnection connection = new SqlConnection(conStr);
-            connection.Open();
-            SqlCommand command = new SqlCommand(query, connection);
-            SqlDataReader reader = command.ExecuteReader();
-            if(reader.Read())
+            var editSkill = context.Skills;
+            var editSkillDet = from sk in editSkill
+                               where sk.Emailid == emailid && sk.Skill1 == skill
+                               select sk;
+            
+
+            
+            if(!editSkillDet.IsNullOrEmpty())
             {
+                foreach(var skil in editSkillDet)
+                {
+                    skills.id = skil.Id;
+                    skills.skill = skil.Skill1;
+                    skills.profeciencyInSkill = skil.Profeciency;
+                }
                 repeat = true;
-                skills.skill = reader.GetString(0);
-                skills.profeciencyInSkill = reader.GetInt32(1);
+                
 
             }
             else
             {
                 Console.WriteLine(@"The skill you entered doesn't exist in your profile");
             }
-            connection.Close();
-            reader.Close();
-            command.Cancel();
+            
             while(repeat)
             {
                 Console.Clear();
@@ -53,19 +65,10 @@ namespace UI_Console
                         repeat = false;
                         break;
                     case "1":
-                        connection.Open();
-                        string query_1 = $"update Skills set skill='{skills.skill}',Profeciency='{skills.profeciencyInSkill}' where emailid='{emailid}' and skill='{skill}'";
-                        SqlCommand command1 = new SqlCommand(query_1,connection);
-                        int n = command1.ExecuteNonQuery();
-                        if(n>0)
-                        {
-                            Console.WriteLine($"{n} row(s) affected successfully");
-                            Console.WriteLine("User SKills updated successfully");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Sorry.........Try editing again");
-                        }
+                        //connection.Open();
+                        //string query_1 = $"update Skills set skill='{skills.skill}',Profeciency='{skills.profeciencyInSkill}' where emailid='{emailid}' and skill='{skill}'";
+                        skills.emailid = emailid;
+                        repo.UpdateSkill(skills);
                         repeat = false;
                         break;
                     case "2":
