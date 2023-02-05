@@ -1,0 +1,23 @@
+2023-02-05 14:13:55.005 +05:30 [INF] --------------------Program is started------------------
+2023-02-05 14:13:59.201 +05:30 [INF] A new trainer entered
+2023-02-05 14:14:06.210 +05:30 [INF] A new trainer entered
+2023-02-05 14:14:11.211 +05:30 [INF] A new trainer entered
+2023-02-05 14:14:15.529 +05:30 [INF] A new trainer entered
+2023-02-05 14:14:30.089 +05:30 [INF] A new trainer entered
+2023-02-05 14:14:41.485 +05:30 [INF] A new trainer entered
+2023-02-05 14:14:52.473 +05:30 [INF] A new trainer entered
+2023-02-05 14:14:59.219 +05:30 [INF] A new trainer entered
+2023-02-05 14:15:22.381 +05:30 [INF] A new trainer entered
+2023-02-05 14:15:48.569 +05:30 [INF] A trainer logged in
+2023-02-05 14:19:00.553 +05:30 [INF] A trainer wanted to add their details
+2023-02-05 14:19:51.768 +05:30 [INF] A trainer wanted to add their details
+2023-02-05 14:20:34.031 +05:30 [INF] A trainer wanted to add their details
+2023-02-05 14:21:07.170 +05:30 [INF] A trainer wanted to add their details
+2023-02-05 14:22:05.166 +05:30 [INF] A trainer wanted to add their details
+2023-02-05 14:22:26.687 +05:30 [INF] A trainer wanted to add their details
+2023-02-05 14:22:36.427 +05:30 [INF] A trainer wanted to add their details
+2023-02-05 14:22:46.392 +05:30 [INF] A trainer wanted to add their details
+2023-02-05 14:23:02.735 +05:30 [INF] A trainer wanted to add their details
+2023-02-05 14:23:29.805 +05:30 [INF] A trainer wanted to edit their details 
+2023-02-05 14:26:46.715 +05:30 [INF] A trainer wanted to delete their details or their account
+2023-02-05 14:28:53.488 +05:30 [INF] ----------------Program ends----------------------

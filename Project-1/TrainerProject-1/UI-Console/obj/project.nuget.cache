@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i3sgbHP2OFMDZRttvaWUj1sskwReUBM8S3IgKXj5MqxOhNT4ihxqu/MsmuzczDZh6YZIkxCHvQzzQl/1wW7+1A==",
+  "dgSpecHash": "AHAiW86X6YKl26XVKDzjAY4IUfNZohjn1JzS69FLcOzEx2NiJ9+6x8SJ+SQqtOdNpPdv9zWhoOvfhNI2A2jKCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\TrainerProject-1\\UI-Console\\UI-Console.csproj",
+  "projectFilePath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\UI-Console\\UI-Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

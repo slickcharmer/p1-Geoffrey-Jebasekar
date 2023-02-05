@@ -10,10 +10,9 @@ namespace Trainer
 {
     class program 
     {
-        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;" +
-            "Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
+        
 
-        //static string conStr = File.ReadAllText("C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-0\\TrainerProject\\UI-Console\\connectionString.txt");
+       
         static void Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
@@ -22,11 +21,11 @@ namespace Trainer
             Log.Logger.Information("--------------------Program is started------------------");
             List<Trainer_Signup> GetDetails = new List<Trainer_Signup>();
             
-            //SqlRepo repo = new SqlRepo(conStr);
+            
             IEFRepo repo = new TrainerEFRepo();
 
             
-            //IRepo repo1;
+           
             EditEducation education1 = new EditEducation();
             
             
@@ -99,8 +98,7 @@ namespace Trainer
                                 case "EditEducation":
                                     string f = Login.PassEmail();
                                     Console.WriteLine("---------------Education---------------");
-                                    //repo1 = new SqlRepo(conStr);
-                                    //var eduDisp = repo1.GetTrainersEducation(f);
+                                    
                                     var eduDisp = repo.GetTrainersEducation(f);
                                     Console.WriteLine("Welcome " + f);
                                     foreach (var disp in eduDisp)
@@ -114,7 +112,7 @@ namespace Trainer
                                         Console.WriteLine("====================================================\n");
 
                                     }
-                                    //string emailid = Login.PassEmail();
+                                    
                                     education1.editEducation(f);
                                     
 
@@ -130,8 +128,7 @@ namespace Trainer
                                 case "EditExperience":
                                     string g = Login.PassEmail();
                                     Console.WriteLine("---------------Experience---------------");
-                                    //repo1 = new SqlRepo(conStr);
-                                    //var expDisp = repo1.GetTrainersCompanies(g);
+                                   
                                     var expDisp = repo.GetTrainersExperience(g);
                                     Console.WriteLine("Welcome " + g);
                                     foreach (var disp in expDisp)
@@ -151,8 +148,7 @@ namespace Trainer
                                 case "EditSkills":
                                     string e = Login.PassEmail();
                                     Console.WriteLine("---------------Skills---------------");
-                                    //repo1 = new SqlRepo(conStr);
-                                    //var skillDisp = repo1.GetTrainersSkills(e);
+                                    
                                     var skillDisp = repo.GetTrainersSkills(e);
                                     Console.WriteLine("Welcome " + e);
                                     foreach (var disp in skillDisp)
@@ -169,8 +165,7 @@ namespace Trainer
                                 case "EditProfile":
                                     string p = Login.PassEmail();
                                     Console.WriteLine("------------------Profile------------------");
-                                    //repo1 = new SqlRepo(conStr);
-                                    //var profDisp = repo1.GetSpecificTrainer(p);
+                                    
                                     var profDisp = repo.GetTrainer(p);
                                     Console.WriteLine("Welcome-------------"+p);
                                     foreach (var disp in profDisp)
@@ -213,19 +208,24 @@ namespace Trainer
                                 case "DeleteEducation":
                                     string f = Login.PassEmail();
                                     Console.WriteLine("---------------Education---------------");
-                                   // repo1 = new SqlRepo(conStr);
-                                    //var eduDisp = repo1.GetTrainersEducation(f);
+                                    
+                                    var eduDisp = repo.GetTrainersEducation(f);
                                     Console.WriteLine("Welcome " + f);
-                                    //foreach (var disp in eduDisp)
-                                    //{
-                                    //    Console.WriteLine($"Education Type: {disp.educationType}, Institute Name: {disp.instituteName}, Stream: {disp.stream}, " +
-                                    //        $"Start Year: {disp.startYear}, End Year: {disp.endYear}, Percentage: {disp.percentage}");
+                                    foreach (var disp in eduDisp)
+                                    {
+                                        Console.WriteLine($"Education Type: {disp.educationType} " + "\n" +
+                                            $"Institute Name: {disp.instituteName} " + "\n" +
+                                            $"Stream: {disp.stream} " + "\n" +
+                                            $"Start Year: {disp.startYear} " + "\n" +
+                                            $"End Year: {disp.endYear} " + "\n" +
+                                            $"Percentage: {disp.percentage}");
+                                        Console.WriteLine("====================================================\n");
 
-                                    //}
-                                    Console.WriteLine("Enter the education which you want to delete. All the relevant details assocaited with it will be deleted");
+                                    }
+                                    Console.WriteLine("Enter the Education Type which you want to delete. All the relevant details assocaited with it will be deleted");
                                     string education = Console.ReadLine();
-                                    //repo1 = new SqlRepo(conStr, f);
-                                    //repo1.DeleteEducation(education);
+                                    
+                                    repo.DeleteEducation(f,education);
 
                                     
                                     break;
@@ -233,45 +233,67 @@ namespace Trainer
                                 case "DeleteExperience":
                                     string g = Login.PassEmail();
                                     Console.WriteLine("---------------Experience---------------");
-                                   // repo1 = new SqlRepo(conStr);
-                                    //var expDisp = repo1.GetTrainersCompanies(g);
+                                    
+                                    var expDisp = repo.GetTrainersExperience(g);
                                     Console.WriteLine("Welcome " + g);
-                                    //foreach (var disp in expDisp)
-                                    //{
-                                    //    Console.WriteLine($"Company name: {disp.companyName}, Title: {disp.title}, Industry: {disp.industry}, " +
-                                    //        $"Employement Type: {disp.employementType}, Location: {disp.location}, Start Year: {disp.startYear}, End Year: {disp.endYear}");
+                                    foreach (var disp in expDisp)
+                                    {
+                                        Console.WriteLine($"Company name: {disp.companyName} " + "\n" +
+                                            $"Title: {disp.title} " + "\n" +
+                                            $"Location: {disp.location} " + "\n" +
+                                            $"Experience in years: {disp.experience}"
+                                            );
+                                        Console.WriteLine("=====================================================\n");
 
-                                    //}
-                                    Console.WriteLine("Enter the Company name which you want to delete. All the relevant details assocaited with it will be deleted");
+                                    }
+                                    Console.WriteLine("Enter the Company name and title which experience details you want to delete. All the relevant details assocaited with it will be deleted");
                                     string experience = Console.ReadLine();
-                                    //repo1 = new SqlRepo(conStr, g);
-                                    //repo1.DeleteExperience(experience);
+                                    string title = Console.ReadLine();
+                                    repo.DeleteExperience(g,experience,title);
 
                                     
                                     break;
                                 case "DeleteSkills":
                                     string e = Login.PassEmail();
                                     Console.WriteLine("---------------Skills---------------");
-                                    //repo1 = new SqlRepo(conStr);
-                                    //var skillDisp = repo1.GetTrainersSkills(e);
+                                    var skillDisp = repo.GetTrainersSkills(e);
                                     Console.WriteLine("Welcome " + e);
-                                    //foreach (var disp in skillDisp)
-                                    //{
-                                    //    Console.WriteLine($"Skill: {disp.skill}, Profeciency: {disp.profeciencyInSkill}");
-                                        
-                                    //}
+                                    foreach (var disp in skillDisp)
+                                    {
+                                        Console.WriteLine($"Skill: {disp.skill} " + "\n" +
+                                            $"Profeciency: {disp.profeciencyInSkill}");
+
+                                        Console.WriteLine("=====================================================\n");
+                                    }
                                     Console.WriteLine("Enter the skill which you want to delete. All the relevant details assocaited with it will be deleted");
                                     string skill = Console.ReadLine();
-                                   // repo1 = new SqlRepo(conStr, e);
-                                    //repo1.DeleteSkill(skill);
+                                    
+                                    repo.DeleteSkill(e, skill);
                                     
                                     
 
                                     break;
                                 case "DeleteAccount":
                                     string email = Login.PassEmail();
+                                    Console.WriteLine("------------------Profile------------------");
+
+                                    var profDisp = repo.GetTrainer(email);
+                                    Console.WriteLine("Welcome-------------" + email);
+                                    foreach (var disp in profDisp)
+                                    {
+                                        Console.WriteLine($"First name: {disp.firstname} " + "\n" +
+                                            $"Last name: {disp.lastname} " + "\n" +
+                                            $"Phone number: {disp.phoneno} " + "\n" +
+                                            $"Age: {disp.age} " + "\n" +
+                                            $"City: {disp.city} "
+                                            );
+                                        Console.WriteLine("=====================================================\n");
+                                    }
                                     //repo1 = new SqlRepo(conStr, email);
                                     //repo1.DeleteAcount();
+                                    Console.WriteLine("Press any key to confirm the deletion of your account");
+                                    Console.ReadKey();
+                                    repo.DeleteAccount(email);
                                     menu = new Menu();
                                     repe = false;
                                     

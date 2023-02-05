@@ -102,3 +102,4 @@ delete from Education where emailid = 'geffshelby@gmail.com' and instituteName =
 alter table Education 
 alter column percentage varchar(10) not null
 
+-- string query_1 = $"update Companies set companyName='{experience.companyName}',Title='{experience.title}',industry='{experience.industry}',employementType='{experience.employementType}',location='{experience.location}',startYear='{experience.startYear}',endYear='{experience.endYear}' where emailid='{emailid}' and companyName='{companyName}' ";

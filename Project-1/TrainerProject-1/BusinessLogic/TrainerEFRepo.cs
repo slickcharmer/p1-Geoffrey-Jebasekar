@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Entities;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using Models;
 using System;
@@ -219,24 +220,7 @@ namespace BusinessLogic
             return trainerDet.ToList();
         }
 
-        //public List<Trainer_Education> GetTrainersEducation(string emailid, string instituteName)
-        //{
-        //    var editEdu = context.Educations;
-        //    var editEduDet = (
-        //                    from edu in editEdu
-        //                    where edu.Emailid == emailid && edu.InstituteName == instituteName
-        //                    select new Trainer_Education()
-        //                    {
-        //                        educationType = edu.EducationType,
-        //                        instituteName = edu.InstituteName,
-        //                        stream = edu.Stream,
-        //                        startYear = edu.StartYear,
-        //                        endYear = edu.EndYear,
-        //                        percentage = edu.Percentage
-        //                    }
-        //        );
-        //    return editEduDet.ToList();
-        //}
+       
 
         public Trainer_Education GetTrainersEducation(string emailid, string instituteName)
         {
@@ -278,7 +262,7 @@ namespace BusinessLogic
                 context.SaveChanges();
                 Console.WriteLine("Changes are successfully added");
             }
-            catch(Exception ex)
+            catch(SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -295,7 +279,7 @@ namespace BusinessLogic
                 Console.WriteLine("Changes are successfully added");
 
             }
-            catch(Exception ex)
+            catch(SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -311,7 +295,7 @@ namespace BusinessLogic
                 Console.WriteLine("Changes are successfully added");
 
             }
-            catch(Exception ex)
+            catch(SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -326,10 +310,87 @@ namespace BusinessLogic
                 Console.WriteLine("Changes are successfully added");
 
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
+
+        public void DeleteEducation(string email,string educationType)
+        {
+            var delete = context.Educations.Where(del => del.Emailid == email && del.EducationType == educationType).FirstOrDefault();
+            try
+            {
+                if (delete != null)
+                {
+                    context.Educations.Remove(delete);
+                    context.SaveChanges();
+                    Console.WriteLine("Education deleted successfully");
+                }
+
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public void DeleteExperience(string email, string companyName, string title)
+        {
+            var delete = context.Companies.Where(del => del.Emailid == email && del.CompanyName == companyName && del.Title == title).FirstOrDefault();
+            try
+            {
+                if (delete != null)
+                {
+                    context.Companies.Remove(delete);
+                    context.SaveChanges();
+                    Console.WriteLine("Experience deleted successfully");
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Try deleting again");
+            }
+        }
+        public void DeleteSkill(string email, string skillName)
+        {
+            var delete = context.Skills.Where(del => del.Emailid == email && del.Skill1 == skillName).FirstOrDefault();
+            try
+            {
+                if (delete != null)
+                {
+                    context.Skills.Remove(delete);
+                    context.SaveChanges();
+                    Console.WriteLine("Skill deleted successfully");
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public void DeleteAccount(string email)
+        {
+            var delete = context.Signups.Where(del => del.EmailId == email).FirstOrDefault();
+            try
+            {
+                if (delete != null)
+                {
+                    context.Signups.Remove(delete);
+                    context.SaveChanges();
+                    Console.WriteLine("Account deleted successfully");
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+        
     }
 }

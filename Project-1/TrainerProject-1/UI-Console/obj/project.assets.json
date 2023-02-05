@@ -4247,11 +4247,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\TrainerProject-1\\UI-Console\\UI-Console.csproj",
+      "projectUniqueName": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\UI-Console\\UI-Console.csproj",
       "projectName": "UI-Console",
-      "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\TrainerProject-1\\UI-Console\\UI-Console.csproj",
+      "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\UI-Console\\UI-Console.csproj",
       "packagesPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\TrainerProject-1\\UI-Console\\obj\\",
+      "outputPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\UI-Console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4268,14 +4268,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\TrainerProject-1\\BusinessLogic\\BusinessLogic.csproj": {
-              "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\TrainerProject-1\\BusinessLogic\\BusinessLogic.csproj"
+            "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\BusinessLogic\\BusinessLogic.csproj"
             },
-            "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\TrainerProject-1\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\TrainerProject-1\\Data\\Data.csproj"
+            "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\Data\\Data.csproj"
             },
-            "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\TrainerProject-1\\EntityLayer\\EntityLayer.csproj": {
-              "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\TrainerProject-1\\EntityLayer\\EntityLayer.csproj"
+            "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\EntityLayer\\EntityLayer.csproj": {
+              "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\EntityLayer\\EntityLayer.csproj"
             }
           }
         }

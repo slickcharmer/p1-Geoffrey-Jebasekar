@@ -15,22 +15,22 @@ namespace UI_Console
     public class EditExperience
     {
         
-        //static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-        //IRepo repo1 = new SqlRepo(conStr);
+        
         public EditExperience(string emailid) 
         {
             Mapper mapper = new Mapper();
             TutorAppContext context= new TutorAppContext();
             bool repeat = false;
-            Console.WriteLine("Enter the Company name which experience details you want to edit");
+            Console.WriteLine("Enter the Company name and title which experience details you want to edit");
             string companyName = Console.ReadLine();
+            string title = Console.ReadLine();
             Trainer_Companies experience = new Trainer_Companies();
             IEFRepo repo = new TrainerEFRepo();
-            //string query = $"select companyName,title,industry,employementType,location,startYear,endYear from Companies where emailid = '{emailid}' and companyName = '{companyName}'";
+           
             var editExp = context.Companies;
             var editExpDet = (
                                 from exp in editExp
-                                where exp.Emailid == emailid && exp.CompanyName == companyName
+                                where exp.Emailid == emailid && exp.CompanyName == companyName && exp.Title == title
                                 select exp
                 );
             
@@ -52,7 +52,7 @@ namespace UI_Console
             }
             else
             {
-                Console.WriteLine("Entered Company name does not exist in your profile");
+                Console.WriteLine("Entered Company name or title does not exist in your profile");
 
             }
 
@@ -77,7 +77,7 @@ namespace UI_Console
                         break;
                     case "1":
 
-                        //string query_1 = $"update Companies set companyName='{experience.companyName}',Title='{experience.title}',industry='{experience.industry}',employementType='{experience.employementType}',location='{experience.location}',startYear='{experience.startYear}',endYear='{experience.endYear}' where emailid='{emailid}' and companyName='{companyName}' ";
+                        
                         experience.emailid = emailid;
                         repo.UpdateExperience(experience);
                       
