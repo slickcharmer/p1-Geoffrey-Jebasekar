@@ -1,5 +1,7 @@
 ﻿//using Data;
 using BusinessLogic;
+using EntityLayer.Entities;
+using Microsoft.EntityFrameworkCore;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -14,32 +16,21 @@ namespace UI_Console
 {
     public class Login : IMenu    
     {
+        //DbContextOptionsBuilder dbContext = new DbContextOptionsBuilder();
         
         public static string emailid;
-        static Trainer_Education education = new Trainer_Education();
+        static Trainer_Signup signup = new Trainer_Signup();
+        static Trainer_Login login = new Trainer_Login();
+       
+        TutorAppContext context = new TutorAppContext();
+        Validation validation = new Validation();
 
-        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;" +
-            "Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
-        //static string conStr = File.ReadAllText(@"C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-0\\TrainerProject\\UI-Console\\connectionString.txt");
-        //IRepo repo = new SqlRepo(conStr);
+       
         IEFRepo repo = new TrainerEFRepo();
         int i=0, j=0, k=0;
 
-        public bool Password(string pass)
-        {
-            Regex r = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$");
-            if (r.IsMatch(pass))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-
-        }
-
+        
+        
         public void Display()
         {
             Console.WriteLine("Login page");
@@ -109,10 +100,32 @@ namespace UI_Console
                             Console.WriteLine("Enter your new password");
                             Console.WriteLine("Your new password should have atleast 8 digits one uppercase, one lowercase and one number");
                             string validPass = Console.ReadLine();
-                            bool result = Password(validPass);
+                            bool result = validation.Password(validPass);
                             if (result)
                             {
-                                repo.UpdatePass(validEmail, validPass);
+                                //repo.UpdatePass(validEmail, validPass);
+                                var editProf = context.Signups;
+                                var editProfDet = from tr in editProf
+                                                  where tr.EmailId == validEmail
+                                                  select tr;
+                                foreach (var prof in editProfDet)
+                                {
+                                    signup.emailId = prof.EmailId;
+                                    signup.password = validPass;
+                                    //signup.firstname = prof.Firstname;
+                                    //signup.lastname = prof.Lastname;
+                                    //signup.phoneno = prof.Phoneno;
+                                    //signup.age = prof.Age;
+                                    //signup.city = prof.City;
+                                }
+                                //var editProfLogin = context.Logins.Where(x => x.Emailid == validEmail).FirstOrDefault();
+                                //login.emailId = editProfLogin.Emailid;
+                                //login.password = editProfLogin.Password;
+
+                                //login.password = validPass;
+                                repo.UpdateSignup(signup);
+                                //repo.UpdateLogin(login);
+                                Console.WriteLine("Password updated successfully");
                                 Console.WriteLine("Press any key to go back to login page");
                                 Console.ReadKey();
                                 repeat = false;

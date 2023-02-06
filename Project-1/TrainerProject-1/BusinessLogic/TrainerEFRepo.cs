@@ -13,6 +13,8 @@ namespace BusinessLogic
 {
     public class TrainerEFRepo : IEFRepo
     {
+        //static Trainer_Signup signup = new Trainer_Signup();
+        //Trainer_Login login = new Trainer_Login();
         TutorAppContext context = new TutorAppContext();
         Mapper map = new Mapper();
         public List<Trainer_Details> ViewDetails(string email)
@@ -111,12 +113,55 @@ namespace BusinessLogic
 
         public bool ForgotPassword(string email, string phoneno)
         {
-            throw new NotImplementedException();
+            var forgot = context.Signups.Where(f => f.EmailId == email && f.Phoneno == phoneno).FirstOrDefault();
+            
+            
+                if(forgot!=null)
+                {
+                    return true;
+                }
+                else
+                {
+                return false;
+                   
+                }
+
+            
+            
+
+
+            
         }
 
         public void UpdatePass(string email, string password)
         {
-            throw new NotImplementedException();
+            
+            
+
+            //var editProf = context.Signups;
+            //var editProfDet = from tr in editProf
+            //                  where tr.EmailId == email
+            //                  select tr;
+            //foreach (var prof in editProfDet)
+            //{
+            //    signup.emailId = prof.EmailId;
+            //    signup.password = password;
+            //    signup.firstname = prof.Firstname;
+            //    signup.lastname = prof.Lastname;
+            //    signup.phoneno = prof.Phoneno;
+            //    signup.age = prof.Age;
+            //    signup.city = prof.City;
+            //}
+            //var editProfLogin = context.Logins.Where(x => x.Emailid == email).FirstOrDefault();
+            //login.emailId = editProfLogin.Emailid;
+            ////login.password = editProfLogin.Password;
+            
+            //login.password = password;
+            
+            ////signup.password = password;
+            //UpdateSignup(signup);
+            //UpdateLogin(login);
+
         }
 
         public void Add(Trainer_Signup signup)
@@ -306,6 +351,34 @@ namespace BusinessLogic
             try
             {
                 context.Signups.Update(map.MapEditProfile(signup));
+                context.SaveChanges();
+                Console.WriteLine("Changes are successfully added");
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public void UpdateSignup(Trainer_Signup signup)
+        {
+            try
+            {
+                context.Signups.Update(map.MapEditProfile(signup));
+                context.SaveChanges();
+                Console.WriteLine("Changes are successfully added");
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public void UpdateLogin(Trainer_Login login)
+        {
+            try
+            {
+                context.Logins.Update(map.MapLogin(login));
                 context.SaveChanges();
                 Console.WriteLine("Changes are successfully added");
 

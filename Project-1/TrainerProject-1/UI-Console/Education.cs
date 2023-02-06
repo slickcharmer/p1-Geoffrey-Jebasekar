@@ -15,24 +15,12 @@ namespace UI_Console
         
         public Education() { }
         static Trainer_Education education = new Trainer_Education();
-        
-        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-        //IRepo repo = new SqlRepo(conStr);
+
+        Validation validation = new Validation();
         IEFRepo repo = new TrainerEFRepo();
         string val = Login.PassEmail();
         
-        public bool Percentage(string percent)
-        {
-            Regex r = new Regex(@"^[0-9][0-9].?[0-9]?%$");
-            if(r.IsMatch(percent))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
         public void Display()
         {
             Console.WriteLine("Trainer's Education Details");
@@ -111,7 +99,7 @@ namespace UI_Console
                     string p = Console.ReadLine();
                     if(p!=null)
                     {
-                        bool percentage = Percentage(p);
+                        bool percentage = validation.Percentage(p);
                         if(percentage)
                         {
                             education.percentage = p;

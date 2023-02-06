@@ -12,36 +12,16 @@ namespace UI_Console
     public class EditProfile
     {
         
-        public bool Phone(string phone)
-        {
-            Regex r = new Regex(@"^[6-9]\d{9}$");
-
-
-
-
-            if (r.IsMatch(phone))
-            {
-
-                return true;
-
-            }
-            else
-            {
-
-                return false;
-            }
-
-
-
-        }
+        
         public EditProfile(string email)
         {
             Trainer_Signup signup = new Trainer_Signup();
             Mapper mapper = new Mapper();
             TutorAppContext context = new TutorAppContext();
             IEFRepo repo = new TrainerEFRepo();
+            Validation validation = new Validation();
             bool repeat = true;
-            //string query = $"SELECT firstname,lastname,phoneno,age,city from Signup where emailid = '{email}'";
+            
             var editProf = context.Signups;
             var editProfDet = from tr in editProf
                               where tr.EmailId == email
@@ -130,7 +110,7 @@ namespace UI_Console
 
                         if (e != null)
                         {
-                            bool no = Phone(e);
+                            bool no = validation.Phone(e);
                             if (no)
                             {
                                 signup.phoneno = e;

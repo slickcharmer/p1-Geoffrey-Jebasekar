@@ -16,62 +16,11 @@ namespace UI_Console
         
         static Trainer_Signup signup = new Trainer_Signup();
         static Trainer_Login login = new Trainer_Login();
+        Validation validation = new Validation();
         
-        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;" +
-            "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
-        //IRepo repo = new SqlRepo(conStr);
+        
         IEFRepo repo = new TrainerEFRepo();
-        public bool Phone(string phone)
-        {
-            Regex r = new Regex(@"^[6-9]\d{9}$");
-
-
-            
-            
-                if (r.IsMatch(phone))
-                {
-
-                return true;
-
-                }
-                else
-                {
-                   
-                    return false;
-                }
-                
-            
-           
-        }
-
-        public bool Password(string pass)
-        {
-            Regex r = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$");
-            if (r.IsMatch(pass))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-
-        }
-
-        public bool Email(string email)
-        {
-            Regex r = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
-            if(r.IsMatch(email))
-            {
-                return true;
-
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
 
 
 
@@ -148,7 +97,7 @@ namespace UI_Console
                     string c = Console.ReadLine();
                     if (c != null)
                     {
-                        bool mail = Email(c);
+                        bool mail = validation.Email(c);
                         if(mail)
                         {
                             signup.emailId = c;
@@ -172,7 +121,7 @@ namespace UI_Console
                     string d = Console.ReadLine();
                     if (d != null)
                     {
-                        bool pass = Password(d);
+                        bool pass = validation.Password(d);
                         if (pass)
                         {
                             signup.password = d;
@@ -194,7 +143,7 @@ namespace UI_Console
                     
                     if(e!=null)
                     {
-                        bool no = Phone(e);
+                        bool no = validation.Phone(e);
                         if(no)
                         {
                             signup.phoneno = e;

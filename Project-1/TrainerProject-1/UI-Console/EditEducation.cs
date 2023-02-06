@@ -18,23 +18,11 @@ namespace UI_Console
         
         static string email = Login.PassEmail();
 
-        //static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-        //IRepo repo1 = new SqlRepo(conStr, email);
+        
         IEFRepo repo = new TrainerEFRepo();
         //Trainer_Education education = new Trainer_Education();
 
-        public bool Percentage(string percent)
-        {
-            Regex r = new Regex(@"^[0-9][0-9].?[0-9]?%$");
-            if (r.IsMatch(percent))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
 
 
 
@@ -42,6 +30,7 @@ namespace UI_Console
         {
             Mapper mapper = new Mapper();
             TutorAppContext context = new TutorAppContext();
+            Validation validation = new Validation();
             
             bool repeat=false;
             //Console.WriteLine("Enter the institute name which education details you want to edit");
@@ -138,7 +127,7 @@ namespace UI_Console
                         string p = Console.ReadLine();
                         if (p != null)
                         {
-                            bool percentage = Percentage(p);
+                            bool percentage = validation.Percentage(p);
                             if (percentage)
                             {
                                 education.percentage = p;

@@ -13,11 +13,9 @@ namespace UI_Console
     public class ViewDetails : IMenu
     {
         Trainer_Details trainer = new Trainer_Details();
-        string email;
+        string f;
 
-        static string conStr = "Server=tcp:geff29-db-server.database.windows.net,1433;Initial Catalog=TrainerProject;Persist Security Info=False;User ID=Geff;Password=Geoffrey2001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-        //SqlRepo repo = new SqlRepo();
-        //IRepo repo = new SqlRepo(conStr);
+ 
         IEFRepo repo = new TrainerEFRepo();
         public void Display()
         {
@@ -34,15 +32,67 @@ namespace UI_Console
                 case "0":
                     return "UserDetails";
                 case "1":
-                    email = Login.PassEmail();
-                    
-                    var viewDetails = repo.ViewDetails(email);
-                    foreach(var details in viewDetails)
-                    {
+                    f = Login.PassEmail();
 
-                        Console.WriteLine(details.TrainerDetails());
-                        
+                    
+                    var profDisp = repo.GetTrainer(f);
+                    var eduDisp = repo.GetTrainersEducation(f);
+                    var expDisp = repo.GetTrainersExperience(f);
+                    var skillDisp = repo.GetTrainersSkills(f);
+                    Console.WriteLine("Welcome " + f);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("------------------Profile------------------");
+                    Console.WriteLine("\n");
+                    foreach (var disp in profDisp)
+                    {
+                        Console.WriteLine($"First name: {disp.firstname} " + "\n" +
+                            $"Last name: {disp.lastname} " + "\n" +
+                            $"Phone number: {disp.phoneno} " + "\n" +
+                            $"Age: {disp.age} " + "\n" +
+                            $"City: {disp.city} "
+                            );
+                        Console.WriteLine("=====================================================\n");
                     }
+                    Console.WriteLine("\n");
+                    Console.WriteLine("---------------Education---------------");
+                    Console.WriteLine("\n");
+
+                    foreach (var disp in eduDisp)
+                    {
+                        Console.WriteLine($"Education Type: {disp.educationType} " + "\n" +
+                            $"Institute Name: {disp.instituteName} " + "\n" +
+                            $"Stream: {disp.stream} " + "\n" +
+                            $"Start Year: {disp.startYear} " + "\n" +
+                            $"End Year: {disp.endYear} " + "\n" +
+                            $"Percentage: {disp.percentage}");
+                        Console.WriteLine("====================================================\n");
+
+                    }
+                    Console.WriteLine("\n");
+                    Console.WriteLine("---------------Experience---------------");
+                    Console.WriteLine("\n");
+                    foreach (var disp in expDisp)
+                    {
+                        Console.WriteLine($"Company name: {disp.companyName} " + "\n" +
+                            $"Title: {disp.title} " + "\n" +
+                            $"Location: {disp.location} " + "\n" +
+                            $"Experience in years: {disp.experience}"
+                            );
+                        Console.WriteLine("=====================================================\n");
+
+                    }
+                    Console.WriteLine("\n");
+                    Console.WriteLine("---------------Skills---------------");
+                    Console.WriteLine("\n");
+                    foreach (var disp in skillDisp)
+                    {
+                        Console.WriteLine($"Skill: {disp.skill} " + "\n" +
+                            $"Profeciency: {disp.profeciencyInSkill}");
+
+                        Console.WriteLine("=====================================================\n");
+                    }
+                    
+
                     Console.WriteLine("Press any key to go to User Details menu");
                     Console.ReadLine();
                     return "UserDetails";
