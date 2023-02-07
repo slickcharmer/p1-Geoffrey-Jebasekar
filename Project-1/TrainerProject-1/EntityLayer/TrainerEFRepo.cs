@@ -53,20 +53,21 @@ namespace EntityLayer
         public void DeleteAccount(string email)
         {
             var delete1 = context.Signups.Where(del => del.EmailId == email ).FirstOrDefault();
-            var delete2 = context.Logins.Where(del => del.Emailid == email).FirstOrDefault();
+            //var delete2 = context.Logins.Where(del => del.Emailid == email).FirstOrDefault();
             try
             {
                 if (delete1 != null)
                 {
                     context.Signups.Remove(delete1);
+                    //context.Logins.Remove(delete2);
                     context.SaveChanges();
                     
                 }
-                if(delete2!=null)
-                {
-                    context.Logins.Remove(delete2);
-                    context.SaveChanges();
-                }
+                //if(delete2!=null)
+                //{
+                //    context.Logins.Remove(delete2);
+                //    context.SaveChanges();
+                //}
                 Console.WriteLine("Trainer account deleted successfully");
 
             }
@@ -118,6 +119,8 @@ namespace EntityLayer
             return delete;
 
         }
+
+       
 
         public TrainerDet.Skill DeleteSkill(string email, string skill)
         {
