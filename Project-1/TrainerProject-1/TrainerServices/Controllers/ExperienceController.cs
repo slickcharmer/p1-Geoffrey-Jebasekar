@@ -17,7 +17,7 @@ namespace TrainerServices.Controllers
         }
 
         [HttpPost("AddTrainerExperience")]
-        public ActionResult Add(Trainer_Companies experience,string email)
+        public ActionResult Add(Trainer_Companies experience,[FromQuery]string email)
         {
             experience.emailid = email;
             try
@@ -58,6 +58,29 @@ namespace TrainerServices.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+        [HttpDelete("DeleteTrainersExperience/{email}/{companyName}/{title}")]
+        public ActionResult Delete(string email, string companyName,string title)
+        {
+            try
+            {
+                logic.DeleteExperience(email, companyName, title);
+
+
+                return Ok("Experience deleted successfully");
+
+
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
     }
 }

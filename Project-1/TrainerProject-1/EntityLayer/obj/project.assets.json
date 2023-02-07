@@ -3818,11 +3818,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\EntityLayer\\EntityLayer.csproj",
+      "projectUniqueName": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Training\\01\\p1-Geoffrey-Jebasekar\\Project-1\\TrainerProject-1\\EntityLayer\\EntityLayer.csproj",
       "projectName": "EntityLayer",
-      "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\EntityLayer\\EntityLayer.csproj",
+      "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Training\\01\\p1-Geoffrey-Jebasekar\\Project-1\\TrainerProject-1\\EntityLayer\\EntityLayer.csproj",
       "packagesPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\EntityLayer\\obj\\",
+      "outputPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Training\\01\\p1-Geoffrey-Jebasekar\\Project-1\\TrainerProject-1\\EntityLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3839,8 +3839,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\Models\\Models.csproj"
+            "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Training\\01\\p1-Geoffrey-Jebasekar\\Project-1\\TrainerProject-1\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Training\\01\\p1-Geoffrey-Jebasekar\\Project-1\\TrainerProject-1\\Models\\Models.csproj"
             }
           }
         }

@@ -39,7 +39,7 @@ namespace BusinessLogic
         public void UpdateExperience(Trainer_Companies experience);
         public void UpdateSkill(Trainer_Skills skills);
         public void UpdateProfile(Trainer_Signup signup);
-        public void DeleteEducation(string email, string educationType);
+        public void DeleteEducation(string email,string educationType);
         public void DeleteExperience(string email, string companyName, string title);
 
         public void DeleteSkill(string email, string skillName);

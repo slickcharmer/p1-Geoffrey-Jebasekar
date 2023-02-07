@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\Data\\Data.csproj": {}
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Training\\01\\p1-Geoffrey-Jebasekar\\Project-1\\TrainerProject-1\\Data\\Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\Data\\Data.csproj": {
+    "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Training\\01\\p1-Geoffrey-Jebasekar\\Project-1\\TrainerProject-1\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Training\\01\\p1-Geoffrey-Jebasekar\\Project-1\\TrainerProject-1\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Training\\01\\p1-Geoffrey-Jebasekar\\Project-1\\TrainerProject-1\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\Data\\obj\\",
+        "outputPath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Training\\01\\p1-Geoffrey-Jebasekar\\Project-1\\TrainerProject-1\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\AppData\\Roaming\\NuGet\\NuGet.Config",

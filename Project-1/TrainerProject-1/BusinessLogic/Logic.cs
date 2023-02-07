@@ -76,22 +76,23 @@ namespace BusinessLogic
 
         public void DeleteAccount(string email)
         {
-            throw new NotImplementedException();
+            repo.DeleteAccount(email);
         }
 
-        public void DeleteEducation(string email, string educationType)
+        public void DeleteEducation(string email,string educationType)
         {
-            throw new NotImplementedException();
+
+            repo.DeleteEducation(email, educationType);
         }
 
         public void DeleteExperience(string email, string companyName, string title)
         {
-            throw new NotImplementedException();
+            repo.DeleteExperience(email, companyName, title);
         }
 
         public void DeleteSkill(string email, string skillName)
         {
-            throw new NotImplementedException();
+            repo.DeleteSkill(email, skillName);
         }
 
         public bool ForgotPassword(string email, string phoneno)

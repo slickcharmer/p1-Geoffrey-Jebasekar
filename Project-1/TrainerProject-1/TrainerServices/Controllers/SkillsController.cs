@@ -58,5 +58,27 @@ namespace TrainerServices.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpDelete("DeleteTrainerSkills")]
+        public ActionResult Delete(string email,string skill)
+        {
+            try
+            {
+                logic.DeleteSkill(email, skill);
+
+
+                return Ok("Skill deleted successfully");
+
+
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

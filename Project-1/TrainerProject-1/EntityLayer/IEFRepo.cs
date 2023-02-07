@@ -19,6 +19,10 @@ namespace EntityLayer
         IEnumerable<Trainer_Education> GetTrainersEducation(string email);
         IEnumerable<Trainer_Companies> GetTrainersCompanies(string email);
         IEnumerable<Trainer_Skills> GetTrainersSkills(string email);
+        public TrainerDet.Education DeleteEducation(string email,string educationType);
+        public TrainerDet.Company DeleteExperience(string email, string companyName, string title);
+        public TrainerDet.Skill DeleteSkill(string email, string skill);
+        public void DeleteAccount(string email);
 
     }
 }

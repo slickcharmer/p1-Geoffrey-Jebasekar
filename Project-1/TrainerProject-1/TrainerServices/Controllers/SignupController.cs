@@ -71,5 +71,27 @@ namespace TrainerServices.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpDelete("DeleteAccount")]
+        public ActionResult Delete(string email)
+        {
+            try
+            {
+                logic.DeleteAccount(email);
+
+
+                return Ok("Account deleted successfully");
+
+
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

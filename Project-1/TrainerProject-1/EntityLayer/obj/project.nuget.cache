@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tpF+s+5RK9C8B+pFy2blcanbDQ6r/7AeDCbraCjs8ml+0u7spZw6SIrmFqlhhAFtVvBjoWT3BrJIDlF4CKNwMw==",
+  "dgSpecHash": "l/yIK/Pjpxb54f7vNjINAYPSkOV8RCWSTGC1gdPCBZaqUbzFjoyA5Wh3IdyI35Eg0nAtX7rM17RCR/5NFCRn5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Project-1\\Project-1\\TrainerProject-1\\EntityLayer\\EntityLayer.csproj",
+  "projectFilePath": "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\Desktop\\GeFF\\Revature\\Training\\01\\p1-Geoffrey-Jebasekar\\Project-1\\TrainerProject-1\\EntityLayer\\EntityLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\ALL USERS.DESKTOP-F90HQB3\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
