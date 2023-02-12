@@ -35,7 +35,7 @@ namespace BusinessLogic
 
         
 
-        public void UpdateEducation(Trainer_Education education);
+        public void UpdateEducation(Trainer_Education education,string email,string educationType);
         public void UpdateExperience(Trainer_Companies experience);
         public void UpdateSkill(Trainer_Skills skills);
         public void UpdateProfile(Trainer_Signup signup);

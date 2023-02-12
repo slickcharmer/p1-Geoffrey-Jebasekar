@@ -218,6 +218,16 @@ namespace EntityLayer
             
         }
 
-        
+        public Education UpdateEducation(string email,string educationType)
+        {
+            return context.Educations.Where(edu => edu.Emailid == email && edu.EducationType == educationType).FirstOrDefault();
+        }
+
+        public Education UpdateEducation(Education _education)
+        {
+            context.Educations.Update(_education);
+            context.SaveChanges();
+            return _education;
+        }
     }
 }

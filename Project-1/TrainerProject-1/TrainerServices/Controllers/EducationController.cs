@@ -83,5 +83,30 @@ namespace TrainerServices.Controllers
             }
 
         }
+        [HttpPut("UpdateTrainersEducation")]
+        public ActionResult Update([FromBody]Trainer_Education education, string email, string educationType )
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(email))
+                {
+                    logic.UpdateEducation(education,email,educationType);
+                    return Ok(education);
+                }
+                else
+                {
+                    return BadRequest($"Something went wrong");
+                }
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
     }
 }

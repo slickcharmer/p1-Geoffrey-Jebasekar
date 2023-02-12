@@ -12,10 +12,10 @@ namespace TrainerServices.Controllers
     [ApiController]
     public class SignupController : ControllerBase
     {
-        
+
         ILogic logic;
         Trainer_Login login = new Trainer_Login();
-        public SignupController(ILogic _logic) 
+        public SignupController(ILogic _logic)
         {
             logic = _logic;
         }
@@ -25,7 +25,7 @@ namespace TrainerServices.Controllers
             try
             {
                 var trainers = logic.GetAllTrainers();
-                if(trainers.Count>0)
+                if (trainers.Count > 0)
                 {
                     return Ok(trainers);
                 }
@@ -34,27 +34,27 @@ namespace TrainerServices.Controllers
                     return BadRequest("NO users have created an account");
                 }
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 return BadRequest(ex.Message);
 
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
-                return BadRequest(ex.Message);  
+                return BadRequest(ex.Message);
             }
         }
         [HttpPost("AddTrainer")]
-        public ActionResult Add([FromForm]Trainer_Signup signup)
+        public ActionResult Add([FromForm] Trainer_Signup signup)
         {
             login.emailId = signup.emailId;
             login.password = signup.password;
             try
             {
-                logic.AddSignupLogin(signup,login);
+                logic.AddSignupLogin(signup, login);
                 //if (trainers.Count > 0)
                 //{
-                   return Ok("Trainer Added Successfully");
+                return Ok("Trainer Added Successfully");
                 //}
                 //else
                 //{
@@ -93,5 +93,6 @@ namespace TrainerServices.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        //[HttpPut("Update")]
     }
 }

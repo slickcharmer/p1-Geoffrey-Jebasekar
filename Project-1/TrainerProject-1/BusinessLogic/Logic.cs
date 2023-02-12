@@ -129,9 +129,43 @@ namespace BusinessLogic
             throw new NotImplementedException();
         }
 
-        public void UpdateEducation(Trainer_Education education)
+        public void UpdateEducation(Trainer_Education education,string email,string educationtype)
         {
-            throw new NotImplementedException();
+            var edu = repo.UpdateEducation(email, educationtype);
+            if (edu != null) 
+            {
+                if((education.educationType != null && education.educationType != "string") && edu.EducationType != education.educationType)
+                {
+                    edu.EducationType = education.educationType;
+                }
+                if((education.instituteName != null && education.instituteName != "string") && edu.InstituteName != education.instituteName)
+                {
+                    edu.InstituteName = education.instituteName;
+                }
+                if((education.stream!=null && education.stream!="string") && edu.Stream!=education.stream)
+                {
+                    edu.Stream = education.stream;
+                }
+                if((education.startYear!=null && education.startYear!="string") && edu.StartYear!=education.startYear)
+                {
+                    edu.StartYear = education.startYear;
+
+                }
+                if ((education.endYear != null && education.endYear != "string") && edu.EndYear != education.endYear)
+                {
+                    edu.EndYear = education.endYear;
+
+                }
+
+                if ((education.percentage != null && education.percentage != "string") && edu.Percentage != education.percentage)
+                {
+                    edu.Percentage = education.percentage;
+
+                }
+            }
+            
+            //edu.Emailid = email;
+            repo.UpdateEducation(edu);
         }
 
         public void UpdateExperience(Trainer_Companies experience)

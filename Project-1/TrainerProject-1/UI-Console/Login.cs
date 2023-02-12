@@ -21,8 +21,9 @@ namespace UI_Console
         public static string emailid;
         static Trainer_Signup signup = new Trainer_Signup();
         static Trainer_Login login = new Trainer_Login();
-       
+
         TutorAppContext context = new TutorAppContext();
+       
         Validation validation = new Validation();
 
        
@@ -95,6 +96,8 @@ namespace UI_Console
                         Console.WriteLine("Enter your phone no associated with the email id");
                         string validPhone = Console.ReadLine();
                         bool valid = repo.ForgotPassword(validEmail, validPhone);
+                        //context = new TutorAppContext();
+                        //TutorAppContext context1 = new TutorAppContext();
                         if (valid)
                         {
                             Console.WriteLine("Enter your new password");
@@ -103,28 +106,35 @@ namespace UI_Console
                             bool result = validation.Password(validPass);
                             if (result)
                             {
+                                //context = new TutorAppContext();
+                                //TutorAppContext context2 = new TutorAppContext();
                                 //repo.UpdatePass(validEmail, validPass);
-                                var editProf = context.Signups;
-                                var editProfDet = from tr in editProf
-                                                  where tr.EmailId == validEmail
-                                                  select tr;
-                                foreach (var prof in editProfDet)
-                                {
-                                    signup.emailId = prof.EmailId;
-                                    signup.password = validPass;
-                                    //signup.firstname = prof.Firstname;
-                                    //signup.lastname = prof.Lastname;
-                                    //signup.phoneno = prof.Phoneno;
-                                    //signup.age = prof.Age;
-                                    //signup.city = prof.City;
-                                }
-                                //var editProfLogin = context.Logins.Where(x => x.Emailid == validEmail).FirstOrDefault();
-                                //login.emailId = editProfLogin.Emailid;
-                                //login.password = editProfLogin.Password;
+                                
+                                var editProfLogin = context.Logins.Where(x => x.Emailid == validEmail).FirstOrDefault();
+                                login.emailId = editProfLogin.Emailid;
+                                login.password = validPass;
 
                                 //login.password = validPass;
-                                repo.UpdateSignup(signup);
-                                //repo.UpdateLogin(login);
+                                //repo.UpdateSignup(signup);
+                                repo.UpdateLogin(login);
+                                repo.UpdateSignupPassword(login);
+                                //context = new TutorAppContext();
+                                //var editProf = context.Signups;
+                                //var editProfDet = from tr in editProf
+                                //                  where tr.EmailId == validEmail
+                                //                  select tr;
+                                //foreach (var prof in editProfDet)
+                                //{
+                                //    signup.emailId = prof.EmailId;
+                                //    signup.password = validPass;
+                                //    signup.firstname = prof.Firstname;
+                                //    signup.lastname = prof.Lastname;
+                                //    signup.phoneno = prof.Phoneno;
+                                //    signup.age = prof.Age;
+                                //    signup.city = prof.City;
+                                //}
+                                //repo.UpdateSignup(signup);
+
                                 Console.WriteLine("Password updated successfully");
                                 Console.WriteLine("Press any key to go back to login page");
                                 Console.ReadKey();

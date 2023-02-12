@@ -464,6 +464,27 @@ namespace BusinessLogic
 
         }
 
-        
+        public void UpdateSignupPassword(Trainer_Login login)
+        {
+            EntityLayer.Entities.Signup _signup = new EntityLayer.Entities.Signup();
+            Trainer_Signup signup = new Trainer_Signup();
+            var editprof = context.Signups;
+            var editprofdet = from tr in editprof
+                              where tr.EmailId == login.emailId
+                              select tr;
+            foreach (var prof in editprofdet)
+            {
+                signup.emailId = prof.EmailId;
+                signup.password = login.password;
+                signup.firstname = prof.Firstname;
+                signup.lastname = prof.Lastname;
+                signup.phoneno = prof.Phoneno;
+                signup.age = prof.Age;
+                signup.city = prof.City;
+            }
+            context.Signups.Update(map.MapEditProfile(signup));
+            context.SaveChanges();
+
+        }
     }
 }
