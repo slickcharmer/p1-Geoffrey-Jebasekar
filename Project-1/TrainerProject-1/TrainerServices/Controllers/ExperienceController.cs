@@ -82,5 +82,30 @@ namespace TrainerServices.Controllers
             }
 
         }
+        [HttpPut("UpdateTrainersExperience")]
+        public ActionResult Update([FromBody] Trainer_Companies experience, string email, string companyName, string title)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(email))
+                {
+                    logic.UpdateExperience(experience, email, companyName, title);
+                    return Ok(experience);
+                }
+                else
+                {
+                    return BadRequest($"Something went wrong");
+                }
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
     }
 }

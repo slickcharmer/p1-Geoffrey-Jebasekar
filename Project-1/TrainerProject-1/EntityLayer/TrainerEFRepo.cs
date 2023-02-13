@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Models;
 using EntityLayer.Entities;
 using Microsoft.Data.SqlClient;
+using Azure;
 
 namespace EntityLayer
 {
@@ -162,6 +163,48 @@ namespace EntityLayer
             return trainerDet.ToList();
         }
 
+        public IEnumerable<Trainer_Signup> GetTrainerByAge(int age)
+        {
+            var signup = context.Signups;
+            var trainerDet = (from tr in signup
+                              where tr.Age >= age
+                              select new Trainer_Signup()
+                              {
+                                  firstname = tr.Firstname,
+                                  lastname = tr.Lastname,
+                                  emailId = tr.EmailId,
+                                  age = tr.Age,
+                                  phoneno = tr.Phoneno,
+                                  city = tr.City
+
+
+
+
+                              });
+            return trainerDet.ToList();
+        }
+
+        public IEnumerable<Trainer_Signup> GetTrainerByLocation(string location)
+        {
+            var signup = context.Signups;
+            var trainerDet = (from tr in signup
+                              where tr.City == location
+                              select new Trainer_Signup()
+                              {
+                                  firstname = tr.Firstname,
+                                  lastname = tr.Lastname,
+                                  emailId = tr.EmailId,
+                                  age = tr.Age,
+                                  phoneno = tr.Phoneno,
+                                  city = tr.City
+
+
+
+
+                              });
+            return trainerDet.ToList();
+        }
+
         public IEnumerable<Trainer_Companies> GetTrainersCompanies(string email)
         {
             var experience = context.Companies;
@@ -229,5 +272,43 @@ namespace EntityLayer
             context.SaveChanges();
             return _education;
         }
+
+        public Company UpdateExperience(string email, string companyName, string title)
+        {
+            return context.Companies.Where(exp => exp.Emailid == email && exp.CompanyName == companyName && exp.Title == title).FirstOrDefault();
+      
+        }
+
+
+        public Company UpdateExperience(Company _experience)
+        {
+            context.Companies.Update(_experience);
+            context.SaveChanges();
+            return _experience;
+        }
+
+        public Signup UpdateProfile(string email)
+        {
+            return context.Signups.Where(sg => sg.EmailId == email).FirstOrDefault();
+        }
+
+        public Signup UpdateProfile(Signup _signup)
+        {
+            context.Signups.Update(_signup);
+            context.SaveChanges();
+            return _signup;
+        }
+
+        public Skill UpdateSkill(string email, string skill)
+        {
+            return context.Skills.Where(sk => sk.Emailid == email && sk.Skill1 == skill).FirstOrDefault();
+        }
+        public Skill UpdateSkill(Skill _skill)
+        {
+            context.Skills.Update(_skill);
+            context.SaveChanges();
+            return _skill;
+        }
+
     }
 }

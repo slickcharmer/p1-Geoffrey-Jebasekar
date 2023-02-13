@@ -16,6 +16,8 @@ namespace EntityLayer
         public void AddE(TrainerDet.Education education);
         public void AddC(TrainerDet.Company experience);
         public void AddSk(TrainerDet.Skill skill);
+        public IEnumerable<Trainer_Signup> GetTrainerByAge(int age);
+        public IEnumerable<Trainer_Signup> GetTrainerByLocation(string location);
         IEnumerable<Trainer_Education> GetTrainersEducation(string email);
         IEnumerable<Trainer_Companies> GetTrainersCompanies(string email);
         IEnumerable<Trainer_Skills> GetTrainersSkills(string email);
@@ -26,6 +28,12 @@ namespace EntityLayer
 
         public TrainerDet.Education UpdateEducation(string email,string educationType);
         public TrainerDet.Education UpdateEducation(TrainerDet.Education _education);
+        public TrainerDet.Company UpdateExperience(string email, string companyName, string title);
+        public TrainerDet.Company UpdateExperience(TrainerDet.Company _experience);
+        public TrainerDet.Skill UpdateSkill(string email, string skill);
+        public TrainerDet.Skill UpdateSkill(TrainerDet.Skill _skill);
+        public TrainerDet.Signup UpdateProfile(string email);
+        public TrainerDet.Signup UpdateProfile(TrainerDet.Signup _signup);
 
 
     }

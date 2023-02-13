@@ -44,6 +44,56 @@ namespace TrainerServices.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet("GetAllTrainersByAge")]
+        public ActionResult GetAge(int age)
+        {
+            try
+            {
+                var trainers = logic.GetTrainersByAge(age);
+                //if ()
+                //{
+                    return Ok(trainers);
+            //}
+            //    else
+            //{
+            //    return badrequest("no users have created an account");
+            //}
+        }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet("GetAllTrainersByLocation")]
+        public ActionResult GetLocation(string location)
+        {
+            try
+            {
+                var trainers = logic.GetTrainersByLocation(location);
+                // if (trainers.Count > 0)
+                //{
+                return Ok(trainers);
+                //}
+                //else
+                //{
+                //   return BadRequest("NO users have created an account");
+                //}
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
         [HttpPost("AddTrainer")]
         public ActionResult Add([FromForm] Trainer_Signup signup)
         {
@@ -94,5 +144,30 @@ namespace TrainerServices.Controllers
             }
         }
         //[HttpPut("Update")]
+        [HttpPut("UpdateTrainersProfile")]
+        public ActionResult Update([FromBody] Trainer_Signup? signup, string email)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(email))
+                {
+                    logic.UpdateProfile(signup, email);
+                    return Ok(signup);
+                }
+                else
+                {
+                    return BadRequest($"Something went wrong");
+                }
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
     }
 }

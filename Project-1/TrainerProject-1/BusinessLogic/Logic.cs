@@ -36,6 +36,15 @@ namespace BusinessLogic
         {
             return repo.GetAllTrainers();
         }
+        public IEnumerable<Trainer_Signup> GetTrainersByAge(int age)
+        {
+            return repo.GetTrainerByAge(age);
+        }
+
+        public IEnumerable<Trainer_Signup> GetTrainersByLocation(string location)
+        {
+            return repo.GetTrainerByLocation(location);
+        }
         public void AddSignupLogin(Trainer_Signup signup, Trainer_Login login)
         {
             repo.Add(map.MapSignup(signup));
@@ -167,6 +176,80 @@ namespace BusinessLogic
             //edu.Emailid = email;
             repo.UpdateEducation(edu);
         }
+        public void UpdateExperience(Trainer_Companies experience, string email, string companyName, string title)
+        {
+            var exp = repo.UpdateExperience(email, companyName, title);
+            if (exp != null)
+            {
+                if ((experience.companyName != null && experience.companyName != "string") && exp.CompanyName != experience.companyName)
+                {
+                    exp.CompanyName = experience.companyName;
+                }
+                if ((experience.title != null && experience.title != "string") && exp.Title != experience.title)
+                {
+                    exp.Title = experience.title;
+                }
+                if ((experience.location != null && experience.location != "string") && exp.Location != experience.location)
+                {
+                    exp.Location = experience.location;
+                }
+                if (((experience.experience).ToString() != null && experience.experience != 0) && exp.Experience != experience.experience)
+                {
+                    exp.Experience = experience.experience;
+                }
+            }
+
+            //edu.Emailid = email;
+            repo.UpdateExperience(exp);
+        }
+
+        public void UpdateSkill(Trainer_Skills skills, string email, string skill)
+        {
+            var skill1 = repo.UpdateSkill(email, skill);
+            if (skill1 != null)
+            {
+                if ((skills.skill != null && skills.skill != "string") &&  skill1.Skill1!= skills.skill)
+                {
+                    skill1.Skill1 = skills.skill;
+                }
+                if (((skills.profeciencyInSkill).ToString() != null && skills.profeciencyInSkill != 0) && skill1.Profeciency != skills.profeciencyInSkill)
+                {
+                    skill1.Profeciency = skills.profeciencyInSkill;
+                }
+                
+            }
+
+            //edu.Emailid = email;
+            repo.UpdateSkill(skill1);
+        }
+        public void UpdateProfile(Trainer_Signup signup, string email)
+        {
+            var profile = repo.UpdateProfile(email);
+            if (profile!=null)
+            {
+                if((signup.firstname!=null && signup.firstname!="string") && profile.Firstname!=signup.firstname)
+                {
+                    profile.Firstname = signup.firstname;
+                }
+                if ((signup.lastname != null && signup.lastname != "string") && profile.Lastname != signup.lastname)
+                {
+                    profile.Lastname = signup.lastname;
+                }
+                if ((signup.phoneno != null && signup.phoneno != "string") && profile.Phoneno != signup.phoneno)
+                {
+                    profile.Phoneno = signup.phoneno;
+                }
+                if (((signup.age).ToString() != null && signup.age != 0) && profile.Age != signup.age)
+                {
+                    profile.Age = signup.age;
+                }
+                if ((signup.city != null && signup.city != "string") && profile.City != signup.city)
+                {
+                    profile.City = signup.city;
+                }
+            }
+            repo.UpdateProfile(profile);
+        }
 
         public void UpdateExperience(Trainer_Companies experience)
         {
@@ -183,20 +266,16 @@ namespace BusinessLogic
             throw new NotImplementedException();
         }
 
-        public void UpdateProfile(Trainer_Signup signup)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public void UpdateSignup(Trainer_Signup signup)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateSkill(Trainer_Skills skills)
-        {
-            throw new NotImplementedException();
-        }
+        //public void UpdateSkill(Trainer_Skills skills, string email, string title)
+        //{
+            
+        //}
 
         public List<Trainer_Details> ViewDetails(string email)
         {

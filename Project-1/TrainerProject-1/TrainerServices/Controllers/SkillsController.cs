@@ -80,5 +80,30 @@ namespace TrainerServices.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPut("UpdateTrainersSkills")]
+        public ActionResult Update([FromBody] Trainer_Skills skills, string email, string skill)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(email))
+                {
+                    logic.UpdateSkill(skills, email, skill);
+                    return Ok(skills);
+                }
+                else
+                {
+                    return BadRequest($"Something went wrong");
+                }
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
     }
 }

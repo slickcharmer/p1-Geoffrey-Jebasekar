@@ -111,13 +111,18 @@ namespace UI_Console
                                 //repo.UpdatePass(validEmail, validPass);
                                 
                                 var editProfLogin = context.Logins.Where(x => x.Emailid == validEmail).FirstOrDefault();
-                                login.emailId = editProfLogin.Emailid;
-                                login.password = validPass;
+                                //login.emailId = editProfLogin.Emailid;
+                                editProfLogin.Password = validPass;
+                                context.SaveChanges();
+                                var editProfSign = context.Signups.Where(x => x.EmailId == validEmail).FirstOrDefault();
+                                editProfSign.Password = validPass;
+                                context.SaveChanges();
+
 
                                 //login.password = validPass;
                                 //repo.UpdateSignup(signup);
-                                repo.UpdateLogin(login);
-                                repo.UpdateSignupPassword(login);
+                                //repo.UpdateLogin(login);
+                                //repo.UpdateSignupPassword(login);
                                 //context = new TutorAppContext();
                                 //var editProf = context.Signups;
                                 //var editProfDet = from tr in editProf
