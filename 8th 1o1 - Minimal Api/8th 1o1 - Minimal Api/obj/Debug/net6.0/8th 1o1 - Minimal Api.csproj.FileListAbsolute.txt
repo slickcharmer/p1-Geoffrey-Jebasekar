@@ -1,0 +1,53 @@
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\appsettings.json
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\8th 1o1 - Minimal Api.exe
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\8th 1o1 - Minimal Api.deps.json
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\8th 1o1 - Minimal Api.runtimeconfig.json
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\8th 1o1 - Minimal Api.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\8th 1o1 - Minimal Api.pdb
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Humanizer.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\8th 1o1 - Minimal Api.csproj.AssemblyReference.cache
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\8th 1o1 - Minimal Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\8th 1o1 - Minimal Api.AssemblyInfoInputs.cache
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\8th 1o1 - Minimal Api.AssemblyInfo.cs
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\8th 1o1 - Minimal Api.csproj.CoreCompileInputs.cache
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\8th 1o1 - Minimal Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\8th 1o1 - Minimal Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\staticwebassets\msbuild.8th 1o1 - Minimal Api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\staticwebassets\msbuild.build.8th 1o1 - Minimal Api.props
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.8th 1o1 - Minimal Api.props
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.8th 1o1 - Minimal Api.props
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\scopedcss\bundle\8th 1o1 - Minimal Api.styles.css
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\8th 1o1 - Minimal Api.csproj.CopyComplete
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\8th 1o1 - Minimal Api.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\refint\8th 1o1 - Minimal Api.dll
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\8th 1o1 - Minimal Api.pdb
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\8th 1o1 - Minimal Api.genruntimeconfig.cache
+C:\Users\ALL USERS.DESKTOP-F90HQB3\Desktop\GeFF\Revature\Training\09\8th 1o1 - Minimal Api\8th 1o1 - Minimal Api\obj\Debug\net6.0\ref\8th 1o1 - Minimal Api.dll
