@@ -25,6 +25,7 @@ namespace EntityLayer
         public TrainerDet.Company DeleteExperience(string email, string companyName, string title);
         public TrainerDet.Skill DeleteSkill(string email, string skill);
         public void DeleteAccount(string email);
+        public IEnumerable<Trainer_Login> IsValidLogin(string email);
 
         public TrainerDet.Education UpdateEducation(string email,string educationType);
         public TrainerDet.Education UpdateEducation(TrainerDet.Education _education);

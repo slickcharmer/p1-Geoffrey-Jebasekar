@@ -8,6 +8,7 @@ using EntityLayer.Entities;
 using Microsoft.Data.SqlClient;
 using TrainerDet = EntityLayer.Entities;
 using Det = EntityLayer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BusinessLogic
 {
@@ -133,9 +134,17 @@ namespace BusinessLogic
 
         
 
-        public int IsValidLogin(string emailid)
+        public bool IsValidLogin(string emailid)
         {
-            throw new NotImplementedException();
+            var trainer = repo.IsValidLogin(emailid);
+            if(!trainer.IsNullOrEmpty())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void UpdateEducation(Trainer_Education education,string email,string educationtype)

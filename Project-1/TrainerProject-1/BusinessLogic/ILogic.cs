@@ -15,7 +15,7 @@ namespace BusinessLogic
         public void UpdateSignup(Trainer_Signup signup);
 
         public void UpdateLogin(Trainer_Login login);
-        int IsValidLogin(string emailid);
+        bool IsValidLogin(string emailid);
         public List<Trainer_Details> ViewDetails(string email);
         public List<Trainer_Signup> GetAllTrainers();
 

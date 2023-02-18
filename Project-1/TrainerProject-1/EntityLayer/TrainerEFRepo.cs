@@ -261,6 +261,20 @@ namespace EntityLayer
             
         }
 
+        public IEnumerable<Trainer_Login> IsValidLogin(string email)
+        {
+            var valid = context.Logins;
+            var trainer = (from tr in valid
+                            where tr.Emailid == email
+                            select new Trainer_Login()
+                            {
+                                emailId= tr.Emailid,
+                                password = tr.Password
+                            }
+                            );
+            return trainer.ToList();
+        }
+
         public Education UpdateEducation(string email,string educationType)
         {
             return context.Educations.Where(edu => edu.Emailid == email && edu.EducationType == educationType).FirstOrDefault();
