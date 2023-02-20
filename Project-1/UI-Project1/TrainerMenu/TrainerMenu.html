@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Page</title>
+	<style>
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		
+		button {
+			padding: 10px 20px;
+			margin: 10px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			background-color: #0077cc;
+			color: white;
+			cursor: pointer;
+		}
+		
+		button:hover {
+			background-color: #0055aa;
+		}
+	</style>
+	<script src="../Js/Main.js"></script>
+</head>
+<body>
+	<div class="container">
+		<a href="../ViewDetails/ViewDetails.html"><button>View Details</button></a>
+		<a href="../AddDetails/TrainerMenu.html"><button>Add Details</button></a>
+		<a href="../UpdateDetails/UpdateTrainerMenu.html"><button>Update Details</button></a>
+		<a href="../DeleteDetails/DeleteTrainerMenu.html"><button>Delete Details</button></a>
+		<a href="../Front Page/UI-1.html"><button onclick="DeleteAccount()">Delete Account</button></a>
+        <a href="../Front Page/UI-1.html"><button>Logout</button></a>
+	</div>
+</body>
+</html>
