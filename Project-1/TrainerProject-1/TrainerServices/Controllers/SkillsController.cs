@@ -16,9 +16,9 @@ namespace TrainerServices.Controllers
             logic= _logic;
         }
         [HttpPost("AddTrainerSkills")]
-        public ActionResult Add(Trainer_Skills skills,string email)
+        public ActionResult Add([FromBody] Trainer_Skills skills)
         {
-            skills.emailid = email;
+            //skills.emailid = email;
             try
             {
                 logic.AddSk(skills);
@@ -44,7 +44,7 @@ namespace TrainerServices.Controllers
                 var trainers = logic.GetTrainersSkills(email);
 
 
-                return Ok(""+trainers);
+                return Ok(trainers);
 
 
             }
@@ -58,6 +58,31 @@ namespace TrainerServices.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("GetTrainersSkillsBySkill")]
+        public ActionResult Get(string email, string skill)
+        {
+            try
+            {
+                var trainers = logic.GetTrainersSkills(email,skill);
+
+
+                return Ok(trainers);
+
+
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
         [HttpDelete("DeleteTrainerSkills")]
         public ActionResult Delete(string email,string skill)
         {

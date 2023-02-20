@@ -1,7 +1,9 @@
 ﻿using BusinessLogic;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 
 namespace TrainerServices.Controllers
 {
@@ -15,15 +17,16 @@ namespace TrainerServices.Controllers
         {
             this.logic = logic;
         }
+        [EnableCors("corspolicy")]
         [HttpGet("ValidateTrainer")]
-        public ActionResult Get(string email)
+        public ActionResult Get(string Email, string Pass)
         {
             try
             {
-                bool trainer = logic.IsValidLogin(email);
-                if(trainer) 
+                var trainer = logic.IsValidLogin(Email,Pass);
+                 if(!trainer.IsNullOrEmpty())
                 {
-                    return Ok();
+                    return Ok(trainer);
                 }
                 else
                 {

@@ -15,7 +15,7 @@ namespace BusinessLogic
         public void UpdateSignup(Trainer_Signup signup);
 
         public void UpdateLogin(Trainer_Login login);
-        bool IsValidLogin(string emailid);
+        IEnumerable<Trainer_Login> IsValidLogin(string emailid,string pass);
         public List<Trainer_Details> ViewDetails(string email);
         public List<Trainer_Signup> GetAllTrainers();
 
@@ -28,8 +28,11 @@ namespace BusinessLogic
         public void AddSk(Trainer_Skills skills);
 
         IEnumerable<Trainer_Education> GetTrainersEducation(string emailid);
+        IEnumerable<Trainer_Education> GetTrainersEducation(string emailid, string edu );
         IEnumerable<Trainer_Companies> GetTrainersExperience(string emailid);
         IEnumerable<Trainer_Skills> GetTrainersSkills(string emailid);
+        IEnumerable<Trainer_Skills> GetTrainersSkills(string emailid, string skill);
+        
         IEnumerable<Trainer_Signup> GetTrainer(string emailid);
         IEnumerable<Trainer_Signup> GetTrainersByAge( int age);
         IEnumerable<Trainer_Signup> GetTrainersByLocation(string location);

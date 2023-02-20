@@ -17,9 +17,9 @@ namespace TrainerServices.Controllers
         }
 
         [HttpPost("AddTrainerExperience")]
-        public ActionResult Add(Trainer_Companies experience,[FromQuery]string email)
+        public ActionResult Add([FromBody] Trainer_Companies experience)
         {
-            experience.emailid = email;
+            //experience.emailid = email;
             try
             {
                 logic.AddC(experience);

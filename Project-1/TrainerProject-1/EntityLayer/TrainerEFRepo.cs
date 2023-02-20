@@ -142,6 +142,27 @@ namespace EntityLayer
             }
             return delete;
         }
+        public IEnumerable<Trainer_Signup> GetTrainer(string email)
+        {
+            var signup = context.Signups;
+            var trainerDet = (from tr in signup
+                              where tr.EmailId == email
+                              select new Trainer_Signup()
+                              {
+                                  firstname = tr.Firstname,
+                                  lastname = tr.Lastname,
+                                  emailId = tr.EmailId,
+                                  age = tr.Age,
+                                  phoneno = tr.Phoneno,
+                                  city = tr.City
+
+
+
+
+                              });
+            return trainerDet.ToList();
+
+        }
 
         public List<Trainer_Signup> GetAllTrainers()
         {
@@ -244,7 +265,48 @@ namespace EntityLayer
 
             return trainerEduDet.ToList();
         }
+        //IEnumerable<Trainer_Education> GetTrainersEducation(string email, string edu)
+        //{
+        //    var education = context.Educations;
+        //    var trainerEduDet = (
+        //                            from tr in education
+        //                            where tr.Emailid == email && tr.EducationType == edu
+        //                            select new Trainer_Education()
+        //                            {
+        //                                emailid = tr.Emailid,
+        //                                educationType = tr.EducationType,
+        //                                instituteName = tr.InstituteName,
+        //                                stream = tr.Stream,
+        //                                startYear = tr.StartYear,
+        //                                endYear = tr.EndYear,
+        //                                percentage = tr.Percentage
 
+
+        //                            });
+
+        //    return trainerEduDet.ToList();
+        //}
+        IEnumerable<Trainer_Education> IEFRepo.GetTrainersEducation(string email, string edu)
+        {
+            var education = context.Educations;
+            var trainerEduDet = (
+                                    from tr in education
+                                    where tr.Emailid == email && tr.EducationType == edu
+                                    select new Trainer_Education()
+                                    {
+                                        emailid = tr.Emailid,
+                                        educationType = tr.EducationType,
+                                        instituteName = tr.InstituteName,
+                                        stream = tr.Stream,
+                                        startYear = tr.StartYear,
+                                        endYear = tr.EndYear,
+                                        percentage = tr.Percentage
+
+
+                                    });
+
+            return trainerEduDet.ToList();
+        }
         public IEnumerable<Trainer_Skills> GetTrainersSkills(string email)
         {
             var skills = context.Skills;
@@ -261,11 +323,27 @@ namespace EntityLayer
             
         }
 
-        public IEnumerable<Trainer_Login> IsValidLogin(string email)
+        public IEnumerable<Trainer_Skills> GetTrainersSkills(string email, string skill)
+        {
+            var skills = context.Skills;
+            var trainerskillDet = (
+                                   from tr in skills
+                                   where tr.Emailid == email && tr.Skill1 == skill
+                                   select new Trainer_Skills()
+                                   {
+                                       emailid = tr.Emailid,
+                                       skill = tr.Skill1,
+                                       profeciencyInSkill = tr.Profeciency
+                                   });
+            return trainerskillDet.ToList();
+
+        }
+
+        public IEnumerable<Trainer_Login> IsValidLogin(string email, string pass)
         {
             var valid = context.Logins;
             var trainer = (from tr in valid
-                            where tr.Emailid == email
+                            where tr.Emailid == email && tr.Password == pass
                             select new Trainer_Login()
                             {
                                 emailId= tr.Emailid,
@@ -324,5 +402,6 @@ namespace EntityLayer
             return _skill;
         }
 
+        
     }
 }

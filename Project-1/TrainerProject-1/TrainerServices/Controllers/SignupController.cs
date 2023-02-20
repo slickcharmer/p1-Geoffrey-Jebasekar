@@ -94,8 +94,34 @@ namespace TrainerServices.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("GetTrainer")]
+        public ActionResult GetTrainer(string email)
+        {
+            try
+            {
+                var trainers = logic.GetTrainer(email);
+                // if (trainers.Count > 0)
+                //{
+                return Ok(trainers);
+                //}
+                //else
+                //{
+                //   return BadRequest("NO users have created an account");
+                //}
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
         [HttpPost("AddTrainer")]
-        public ActionResult Add([FromForm] Trainer_Signup signup)
+        public ActionResult Add([FromBody] Trainer_Signup signup)
         {
             login.emailId = signup.emailId;
             login.password = signup.password;

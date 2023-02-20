@@ -18,9 +18,9 @@ namespace TrainerServices.Controllers
             logic = _logic;
         }
         [HttpPost("AddTrainerEducation")]
-        public ActionResult Add([FromBody][BindRequired] Trainer_Education education, string email)
+        public ActionResult Add([FromBody] Trainer_Education education)
         {
-            education.emailid = email;
+            //education.emailid = email;
             try
             {
                 logic.AddE(education);
@@ -44,6 +44,28 @@ namespace TrainerServices.Controllers
             try
             {
                 var trainers = logic.GetTrainersEducation(email);
+
+
+                return Ok(trainers);
+
+
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet("GetTrainersEducationByType")]
+        public ActionResult Get(string email, string edu)
+        {
+            try
+            {
+                var trainers = logic.GetTrainersEducation(email, edu);
 
 
                 return Ok(trainers);

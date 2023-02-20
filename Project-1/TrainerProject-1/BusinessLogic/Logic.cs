@@ -46,6 +46,7 @@ namespace BusinessLogic
         {
             return repo.GetTrainerByLocation(location);
         }
+        
         public void AddSignupLogin(Trainer_Signup signup, Trainer_Login login)
         {
             repo.Add(map.MapSignup(signup));
@@ -65,6 +66,10 @@ namespace BusinessLogic
         {
             return repo.GetTrainersEducation(emailid);
         }
+        IEnumerable<Trainer_Education> ILogic.GetTrainersEducation(string emailid, string edu)
+        {
+            return repo.GetTrainersEducation(emailid, edu);
+        }
         public IEnumerable<Trainer_Companies> GetTrainersExperience(string emailid)
         {
             return repo.GetTrainersCompanies(emailid);
@@ -72,6 +77,10 @@ namespace BusinessLogic
         public IEnumerable<Trainer_Skills> GetTrainersSkills(string emailid)
         {
             return repo.GetTrainersSkills(emailid);
+        }
+        public IEnumerable<Trainer_Skills> GetTrainersSkills(string emailid, string skill)
+        {
+            return repo.GetTrainersSkills(emailid,skill);
         }
 
         public void AddL(Trainer_Login login)
@@ -114,7 +123,7 @@ namespace BusinessLogic
 
         public IEnumerable<Trainer_Signup> GetTrainer(string emailid)
         {
-            throw new NotImplementedException();
+            return repo.GetTrainer(emailid);
         }
 
         public List<Trainer_Education> GetTrainersEducation(string emailid)
@@ -134,17 +143,10 @@ namespace BusinessLogic
 
         
 
-        public bool IsValidLogin(string emailid)
+        public IEnumerable<Trainer_Login> IsValidLogin(string emailid, string pass)
         {
-            var trainer = repo.IsValidLogin(emailid);
-            if(!trainer.IsNullOrEmpty())
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            var trainer = repo.IsValidLogin(emailid,pass);
+            return trainer;
         }
 
         public void UpdateEducation(Trainer_Education education,string email,string educationtype)

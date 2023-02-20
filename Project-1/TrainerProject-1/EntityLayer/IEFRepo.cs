@@ -16,16 +16,19 @@ namespace EntityLayer
         public void AddE(TrainerDet.Education education);
         public void AddC(TrainerDet.Company experience);
         public void AddSk(TrainerDet.Skill skill);
+        public IEnumerable<Trainer_Signup> GetTrainer(string email);
         public IEnumerable<Trainer_Signup> GetTrainerByAge(int age);
         public IEnumerable<Trainer_Signup> GetTrainerByLocation(string location);
         IEnumerable<Trainer_Education> GetTrainersEducation(string email);
+        IEnumerable<Trainer_Education> GetTrainersEducation(string email,string edu);
         IEnumerable<Trainer_Companies> GetTrainersCompanies(string email);
         IEnumerable<Trainer_Skills> GetTrainersSkills(string email);
+        IEnumerable<Trainer_Skills> GetTrainersSkills(string email, string skill);
         public TrainerDet.Education DeleteEducation(string email,string educationType);
         public TrainerDet.Company DeleteExperience(string email, string companyName, string title);
         public TrainerDet.Skill DeleteSkill(string email, string skill);
         public void DeleteAccount(string email);
-        public IEnumerable<Trainer_Login> IsValidLogin(string email);
+        public IEnumerable<Trainer_Login> IsValidLogin(string email,string pass);
 
         public TrainerDet.Education UpdateEducation(string email,string educationType);
         public TrainerDet.Education UpdateEducation(TrainerDet.Education _education);
