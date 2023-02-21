@@ -82,7 +82,7 @@ namespace TrainerServices.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpDelete("DeleteTrainersEducation/{email}/{educationType}")]
+        [HttpDelete("DeleteTrainersEducation")]
         public ActionResult Delete(string email,string educationType)
         {
             try

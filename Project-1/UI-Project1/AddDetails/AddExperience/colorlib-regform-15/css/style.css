@@ -256,11 +256,11 @@ body {
 }
 
 .container {
-  width: 1000px;
+  width: 1150px;
   position: relative;
   margin: 0 auto;
   background: #fff;
-  margin-top: -35px;
+  margin-top: -100px; 
 }
 
 .signup-img, .signup-form {
@@ -425,15 +425,15 @@ select {
   cursor: pointer; }
 
 #reset {
-  background: #f8f8f8;
-  color: #999;
+  background: black;
+  color: white;
   margin-right: 8px; }
   #reset:hover {
     background: #ff6801;
     color: #fff; }
 
 #submit {
-  background: #ff6801;
+  background: black;
   color: #fff; }
   #submit:hover {
     background-color: #cd5300; }
@@ -451,7 +451,7 @@ select {
     -ms-flex-direction: column; }
 
   .signup-img, .signup-form {
-    width: 70%; } }
+    width: 100%; } }
 @media screen and (max-width: 768px) {
   .register-form {
     padding: 50px 40px 50px 40px; } }
@@ -487,11 +487,5 @@ select {
   #reset {
     margin-right: 0px;
     margin-bottom: 10px; } }
-/* .m1
-{
-  background: red;
-} */
-.container{
- 
-}
+
 /*# sourceMappingURL=style.css.map */

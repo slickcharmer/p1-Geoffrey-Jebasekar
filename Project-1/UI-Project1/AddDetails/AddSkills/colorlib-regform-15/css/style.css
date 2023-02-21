@@ -413,30 +413,30 @@ select {
   text-align: right;
   padding-top: 27px; }
 
-.submit {
-  width: 140px;
-  height: 40px;
-  display: inline-block;
-  font-family: 'Poppins';
-  font-weight: 400;
-  font-size: 13px;
-  padding: 10px;
-  border: none;
-  cursor: pointer; }
-
-#reset {
-  background: #f8f8f8;
-  color: #999;
-  margin-right: 8px; }
-  #reset:hover {
-    background: #ff6801;
+  .submit {
+    width: 140px;
+    height: 40px;
+    display: inline-block;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 13px;
+    padding: 10px;
+    border: none;
+    cursor: pointer; }
+  
+  #reset {
+    background: black;
+    color: white;
+    margin-right: 8px; }
+    #reset:hover {
+      background: #ff6801;
+      color: #fff; }
+  
+  #submit {
+    background: black;
     color: #fff; }
-
-#submit {
-  background: #ff6801;
-  color: #fff; }
-  #submit:hover {
-    background-color: #cd5300; }
+    #submit:hover {
+      background-color: #cd5300; }
 
 @media screen and (max-width: 992px) {
   .container {

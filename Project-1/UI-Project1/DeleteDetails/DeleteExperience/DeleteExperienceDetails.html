@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Experience Details</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f5f5f5;
+			padding: 20px;
+		}
+
+		h1 {
+			font-size: 28px;
+			margin-bottom: 20px;
+		}
+
+		.container {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+			max-width: 1450px;
+			margin: 0 auto;
+		}
+
+		.row {
+			display: flex;
+			align-items: center;
+			margin-bottom: 10px;
+		}
+
+		.label {
+			flex: 1;
+			font-weight: bold;
+		}
+
+		.value {
+			flex: 2;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Experience Details</h1>
+		<div id="exp_details"></div>
+         <!-- <input type="email" name="email" id="email" placeholder="email"> -->
+            <!-- <button onclick="name()">click</button> -->
+			<!-- <button type="submit" onclick="GetSkill()">click</button> -->
+			<div>Enter the Company name and corresponding title which you want to delete</div>
+			 <input type="text" name="exp" id="exp" placeholder="Company Name">
+             <input type="text" name="title" id="title" placeholder="Title">
+
+            
+			
+			<button type="submit" onclick="DeleteExp()">Click</button>
+			<div>
+				<a href="../DeleteTrainerMenu.html"><button>Go Back</button></a> 
+			</div>
+		<script src="../../Js/DeleteExperience.js">
+			
+				
+		</script>
+	</div>
+</body>
+</html>
