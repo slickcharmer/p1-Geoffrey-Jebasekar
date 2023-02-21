@@ -30,6 +30,7 @@ namespace BusinessLogic
         IEnumerable<Trainer_Education> GetTrainersEducation(string emailid);
         IEnumerable<Trainer_Education> GetTrainersEducation(string emailid, string edu );
         IEnumerable<Trainer_Companies> GetTrainersExperience(string emailid);
+        IEnumerable<Trainer_Companies> GetTrainersExperience(string emailid, string exp, string title);
         IEnumerable<Trainer_Skills> GetTrainersSkills(string emailid);
         IEnumerable<Trainer_Skills> GetTrainersSkills(string emailid, string skill);
         

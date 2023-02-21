@@ -95,7 +95,7 @@ insert into Signup values ('Geff','Shelby','geffshelby@gmail.com','12345678','98
 insert into Login values('geffshelby@gmail.com','12345678');
 insert into Education values('geffshelby@gmail.com','UG','Loyola','IT','2023','2025','80');
 insert into Companies values('geffshelby@gmail.com','Amazon','Developer','Bangalore','3');
-insert into Skills values('geffshelby@gmail.com','C++',5);
+insert into Skills values('geffshelby@gmail.com','C',5);
 
 delete from Education where emailid = 'geffshelby@gmail.com' and instituteName = 'Loyola' and id=6
 

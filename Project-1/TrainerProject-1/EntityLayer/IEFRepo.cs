@@ -22,6 +22,7 @@ namespace EntityLayer
         IEnumerable<Trainer_Education> GetTrainersEducation(string email);
         IEnumerable<Trainer_Education> GetTrainersEducation(string email,string edu);
         IEnumerable<Trainer_Companies> GetTrainersCompanies(string email);
+        IEnumerable<Trainer_Companies> GetTrainersCompanies(string email, string exp, string title);
         IEnumerable<Trainer_Skills> GetTrainersSkills(string email);
         IEnumerable<Trainer_Skills> GetTrainersSkills(string email, string skill);
         public TrainerDet.Education DeleteEducation(string email,string educationType);

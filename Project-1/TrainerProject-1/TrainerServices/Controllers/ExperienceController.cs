@@ -59,7 +59,29 @@ namespace TrainerServices.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpDelete("DeleteTrainersExperience/{email}/{companyName}/{title}")]
+        [HttpGet("GetTrainersExperienceByExp")]
+        public ActionResult Get(string email, string exp, string title)
+        {
+            try
+            {
+                var trainers = logic.GetTrainersExperience(email, exp, title);
+
+
+                return Ok(trainers);
+
+
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpDelete("DeleteTrainersExperience")]
         public ActionResult Delete(string email, string companyName,string title)
         {
             try

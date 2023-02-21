@@ -74,6 +74,10 @@ namespace BusinessLogic
         {
             return repo.GetTrainersCompanies(emailid);
         }
+        public IEnumerable<Trainer_Companies> GetTrainersExperience(string emailid, string exp, string title)
+        {
+            return repo.GetTrainersCompanies(emailid, exp, title);
+        }
         public IEnumerable<Trainer_Skills> GetTrainersSkills(string emailid)
         {
             return repo.GetTrainersSkills(emailid);

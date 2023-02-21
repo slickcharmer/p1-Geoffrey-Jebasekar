@@ -105,11 +105,11 @@ EmailID = EmailID.replace(/['‘’"“”]/g, '');
 							<input type="text" value="${data[0].startYear}"name="name" id="start__" required/>
 						</div>
 						<div class="form-group">
-							<label for="comp_name">Institute Name :</label>
+							<label for="comp_name">End Year :</label>
 							<input type="text" value="${data[0].endYear}"name="name" id="end__" required/>
 						</div>
 						<div class="form-group">
-							<label for="comp_name">Institute Name :</label>
+							<label for="comp_name">Percentage :</label>
 							<input type="text" value="${data[0].percentage}"name="name" id="per__" required/>
 						</div>
 						<button type="submit" onclick="updateEdu()">Update</button>

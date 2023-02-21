@@ -243,7 +243,23 @@ namespace EntityLayer
                 );
             return trainerExpDet.ToList();
         }
-
+        public IEnumerable<Trainer_Companies> GetTrainersCompanies(string email, string exp, string title)
+        {
+            var experience = context.Companies;
+            var trainerExpDet = (
+                                   from tr in experience
+                                   where tr.Emailid == email && tr.CompanyName == exp && tr.Title == title
+                                   select new Trainer_Companies()
+                                   {
+                                       emailid = tr.Emailid,
+                                       companyName = tr.CompanyName,
+                                       title = tr.Title,
+                                       location = tr.Location,
+                                       experience = tr.Experience
+                                   }
+                );
+            return trainerExpDet.ToList();
+        }
         public IEnumerable<Trainer_Education> GetTrainersEducation(string email)
         {
             var education = context.Educations;
