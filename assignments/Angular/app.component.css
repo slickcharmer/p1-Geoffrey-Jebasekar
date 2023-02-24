@@ -1,0 +1,51 @@
+.example-card {
+    max-width: 400px;
+    margin-left: 40%;
+    margin-top: 1%;
+    background-color: blue;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+    
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .card{
+    color: aquamarine;
+    
+  }
+  .matcard{
+    background-color: black;
+  }
+
+  /* mat-sidenav-content {
+    height: calc(100vh - 64px); Set height of main content area to fill remaining viewport height
+    overflow-y: auto;  Enable vertical scrolling
+  }
+   */
+
+   #Main
+   {
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+
+   }
+
+   .pressed {
+    background-color: red;
+    color: white;
+  }
+  .pressedB
+  {
+    background-color: blue;
+    color: white;
+  }
+  .pressedG
+  {
+    background-color: green;
+    color: white;
+  }

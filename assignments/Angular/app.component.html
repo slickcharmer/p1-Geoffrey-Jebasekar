@@ -1,0 +1,73 @@
+<div id="Main">
+<h1 style="margin-left: 44%;">Angular Assignments</h1>
+<!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="card"><mat-card>
+  <mat-card-content class="matcard">Simple card</mat-card-content>
+</mat-card>
+</div>
+
+<div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+      bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <!-- Sidebar content goes here -->
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Main content goes here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<section>
+  <h4>Button Toggle inside of a Template-driven form</h4>
+  <mat-button-toggle-group [(ngModel)]="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="red" (click)="onButtonPress()" [ngClass]="{ 'pressed': isPressed }">Red</mat-button-toggle>
+    <mat-button-toggle value="blue" (click)="onButtonPress1()" [ngClass]="{ 'pressedB': isPressed1 }">Blue</mat-button-toggle>
+    <mat-button-toggle value="green" (click)="onButtonPress2()" [ngClass]="{ 'pressedG': isPressed2}">Green</mat-button-toggle>
+  </mat-button-toggle-group>
+  <p>Chosen value is {{fontStyle}}</p>
+</section>
+
+<section>
+  <h4>Button Toggle inside of a Reactive form</h4>
+  <mat-button-toggle-group [formControl]="fontStyleControl" aria-label="Font Style">
+    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+  </mat-button-toggle-group>
+  <p>Chosen value is {{fontStyleControl.value}}</p>
+</section>
+
+</div>
