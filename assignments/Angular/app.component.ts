@@ -18,13 +18,19 @@ export class AppComponent {
 
   onButtonPress() {
     this.isPressed = true;
+    this.isPressed1=false;
+    this.isPressed2=false;
   }
   onButtonPress1()
   {
     this.isPressed1=true;
+    this.isPressed=false;
+    this.isPressed2=false;
   }
   onButtonPress2()
   {
     this.isPressed2=true;
+    this.isPressed = false;
+    this.isPressed1 = false;
   }
 }
