@@ -1,0 +1,55 @@
+<!-- <p>edit-employee works!</p> -->
+<!-- <p>add-employee works!</p> -->
+<div class="container my-5">
+  <h1 class="mb-3">Edit employee</h1>
+
+  <div class="row">
+    <div class="col-6">
+      <form #form = "ngForm" (ngSubmit)="updateEmployee()">
+        <div class="mb-3">
+          <label for="id" class="form-label">Id</label>
+          <input type="text" class="form-control" id="id" readonly
+          name="id" [(ngModel)]="employeeDetails.id">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name"
+          name="name" [(ngModel)]="employeeDetails.name">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email"
+          name="email" [(ngModel)]="employeeDetails.email">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="number" class="form-control" id="phone"
+          name="phone" [(ngModel)]="employeeDetails.phone">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+          <label for="salary" class="form-label">Salary</label>
+          <input type="number" class="form-control" id="salary"
+          name="salary" [(ngModel)]="employeeDetails.salary">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+
+        <div class="mb-3">
+          <label for="dept" class="form-label">Department</label>
+          <input type="text" class="form-control" id="dept"
+          name="department" [(ngModel)]="employeeDetails.department">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+
+        <button type="submit" class="btn btn-primary mr-5">Save</button>
+        <button type="button" class="btn btn-danger" (click)="deleteEmployee(employeeDetails.id)">Delete</button>
+      </form>
+
+    </div>
+  </div>
+
+
+</div>

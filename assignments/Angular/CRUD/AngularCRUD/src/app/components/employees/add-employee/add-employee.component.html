@@ -1,0 +1,47 @@
+<!-- <p>add-employee works!</p> -->
+<div class="container my-5">
+  <h1 class="mb-3">Add new employee</h1>
+
+  <div class="row">
+    <div class="col-6">
+      <form #form = "ngForm" (ngSubmit)="addEmployeeFunc()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name"
+          name="name" [(ngModel)]="addEmployee.name">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email"
+          name="email" [(ngModel)]="addEmployee.email">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="number" class="form-control" id="phone"
+          name="phone" [(ngModel)]="addEmployee.phone">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+          <label for="salary" class="form-label">Salary</label>
+          <input type="number" class="form-control" id="salary"
+          name="salary" [(ngModel)]= "addEmployee.salary">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+
+        <div class="mb-3">
+          <label for="dept" class="form-label">Department</label>
+          <input type="text" class="form-control" id="dept"
+          name="department" [(ngModel)]="addEmployee.department">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+
+    </div>
+  </div>
+
+
+</div>
